@@ -1,0 +1,4 @@
+google-cloud-firestore
+google-cloud-secret-manager
+google-cloud-storage
+python-telegram-bot
