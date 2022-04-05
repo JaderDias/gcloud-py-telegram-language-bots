@@ -26,7 +26,7 @@ def word_command(update: Update, context: CallbackContext) -> None:
     update.message.reply_text(content)
 
 def subscribe(update: Update, interval_s: int) -> None:
-    subscription = Firestore.subscribe(update.effective_chat.id, interval_s=3600)
+    subscription = Firestore.subscribe(update.effective_chat.id, interval_s)
     if subscription == None:
         update.message.reply_text("already subscribed")
         return
