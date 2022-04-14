@@ -23,29 +23,29 @@ PT_DICT="pt.csv"
 SH_DICT="sh.csv"
 if [ ! -f "$DE_DICT" ] || [ ! -f "$ES_DICT" ] || [ ! -f "$FR_DICT" ] || [ ! -f "$IT_DICT" ] || [ ! -f "$NL_DICT" ] || [ ! -f "$PT_DICT" ] || [ ! -f "$SH_DICT" ]; then
     DUMP_XML_BZ2="enwiktionary-latest-pages-articles-multistream.xml.bz2"
-    if [ ! -f "$DUMP_XML_BZ2" ]; then
+    if [ ! -f "../$DUMP_XML_BZ2" ]; then
         wget "https://dumps.wikimedia.org/enwiktionary/latest/$DUMP_XML_BZ2"
     fi
     if [ ! -f "$DE_DICT" ]; then
-        python3 filter_wiktionary.py German A-ZÀäüöß $DUMP_XML_BZ2 | tee $DE_DICT
+        python3 python/parser/filter_wiktionary.py German A-ZÀäüöß ../$DUMP_XML_BZ2 | tee $DE_DICT
     fi
     if [ ! -f "$ES_DICT" ]; then
-        python3 filter_wiktionary.py Spanish A-Záííñóúü $DUMP_XML_BZ2 | tee $ES_DICT
+        python3 python/parser/filter_wiktionary.py Spanish A-Záííñóúü ../$DUMP_XML_BZ2 | tee $ES_DICT
     fi
     if [ ! -f "$FR_DICT" ]; then
-        python3 filter_wiktionary.py French A-ZÀÂÆÉÈÙÊÎÔÛËÏÇ $DUMP_XML_BZ2 | tee $FR_DICT
+        python3 python/parser/filter_wiktionary.py French A-ZÀÂÆÉÈÙÊÎÔÛËÏÇ ../$DUMP_XML_BZ2 | tee $FR_DICT
     fi
     if [ ! -f "$IT_DICT" ]; then
-        python3 filter_wiktionary.py Italian A-ZÀÂÆÉÈÙÊÎÔÛËÏÇ $DUMP_XML_BZ2 | tee $IT_DICT
+        python3 python/parser/filter_wiktionary.py Italian A-ZÀÂÆÉÈÙÊÎÔÛËÏÇ ../$DUMP_XML_BZ2 | tee $IT_DICT
     fi
     if [ ! -f "$NL_DICT" ]; then
-        python3 filter_wiktionary.py Dutch A-ZÁÉÍÓÚÀÈËÏÖÜĲ $DUMP_XML_BZ2 | tee $NL_DICT
+        python3 python/parser/filter_wiktionary.py Dutch A-ZÁÉÍÓÚÀÈËÏÖÜĲ ../$DUMP_XML_BZ2 | tee $NL_DICT
     fi
     if [ ! -f "$PT_DICT" ]; then
-        python3 filter_wiktionary.py Portuguese A-Zãáàâçéêíõóôúü $DUMP_XML_BZ2 | tee $PT_DICT
+        python3 python/parser/filter_wiktionary.py Portuguese A-Zãáàâçéêíõóôúü ../$DUMP_XML_BZ2 | tee $PT_DICT
     fi
     if [ ! -f "$SH_DICT" ]; then
-        python3 filter_wiktionary.py Serbo-Croatian A-ZÁČĆĐÍĽŇÔŠŤÚÝŽ $DUMP_XML_BZ2 | tee $SH_DICT
+        python3 python/parser/filter_wiktionary.py Serbo-Croatian A-ZÁČĆĐÍĽŇÔŠŤÚÝŽ ../$DUMP_XML_BZ2 | tee $SH_DICT
     fi
 fi
 
@@ -91,7 +91,7 @@ fi
 PT_TOKEN=`gcloud secrets versions access latest --secret="telegram-pt-token"`
 if [ -z "$PT_TOKEN" ]
 then
-    printf "paste the telegram bot token for the NL language: "
+    printf "paste the telegram bot token for the PT language: "
     read PT_TOKEN
 fi
 

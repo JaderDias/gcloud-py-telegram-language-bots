@@ -6,6 +6,10 @@ from datetime import datetime
 
 db = firestore.Client()
 
+def set_language(language_s: str) -> None:
+    global language
+    language = language_s
+
 def get_language() -> str:
     collection = db.collection(Constants.LANGUAGE_COLLECTION)
     docs = collection.stream()
@@ -13,13 +17,14 @@ def get_language() -> str:
         if document_snapshot.get(u"next_run_epoch") > datetime.now().timestamp():
             continue
         document_reference = db.document(Constants.LANGUAGE_COLLECTION, document_snapshot.get(u"id"))
+        set_language(document_snapshot.get(u"id"))
+        last_run_epoch = datetime.now().timestamp()
+        next_run_epoch = last_run_epoch + 600
+        logger.info(f"language {language} last_run_epoch {last_run_epoch} next_run_epoch {next_run_epoch}")
         document_reference.update({
-            u'last_run_epoch': datetime.now().timestamp(),
-            u'next_run_epoch': datetime.now().timestamp() + 600,
+            u'last_run_epoch': last_run_epoch,
+            u'next_run_epoch': next_run_epoch,
         })
-        global language
-        language = document_snapshot.get(u"id")
-        logger.info(f"got language {language}")
         return language
     return ""
 
@@ -37,17 +42,19 @@ def is_subscribed(document_snapshot: firestore.DocumentSnapshot) -> bool:
         return False
     return document_snapshot.get(u'next_publication_epoch') < datetime.max.timestamp()
 
-def subscribe(chat_id: int, interval_s: int) -> dict:
+def subscribe(chat_id: int, interval_s: int, is_quiz: bool) -> dict:
     document_reference = get_subscriber(chat_id)
     document_snapshot = document_reference.get()
     publication_count = -1
     if document_snapshot.exists:
         publication_count = document_snapshot.get(u'publication_count')
-        if document_snapshot.get(u'next_publication_epoch') < datetime.max.timestamp()\
-                and document_snapshot.get(u'interval_s') == interval_s:
+        if document_snapshot.get(u'next_publication_epoch') < datetime.max.timestamp() \
+                and document_snapshot.get(u'interval_s') == interval_s \
+                and document_snapshot.get(u'is_quiz') == is_quiz:
             return None
     obj = {
         u'language': language,
+        u'is_quiz': is_quiz,
         u'chat_id': chat_id,
         u'created': int(datetime.now().timestamp()),
         u'interval_s': interval_s,
@@ -57,19 +64,30 @@ def subscribe(chat_id: int, interval_s: int) -> dict:
     document_reference.set(obj)
     return obj
 
-def next(chat_id: int) -> dict:
+def _get_subscription(chat_id: int) -> tuple:
     document_reference = get_subscriber(chat_id)
     document_snapshot = document_reference.get()
-    if not document_snapshot.exists:
-        return None
-    publication_count = document_snapshot.get(u'publication_count')
+    if document_snapshot.exists:
+        return (document_reference, document_snapshot.to_dict())
     obj = {
-        u'language': language,
         u'chat_id': chat_id,
-        u'interval_s': document_snapshot.get(u'interval_s'),
-        u'publication_count': publication_count+1,
+        u'created': int(datetime.now().timestamp()),
+        u'interval_s': 86400,
+        u'is_quiz': False,
+        u'language': language,
+        u'next_publication_epoch': datetime.max.timestamp(),
+        u'publication_count': 0,
     }
-    document_reference.update(obj)
+    return (document_reference, obj)
+
+def get_subscription(chat_id: int) -> dict:
+    (_, obj) = _get_subscription(chat_id)
+    return obj
+
+def get_subscription_and_update_count(chat_id: int) -> dict:
+    (document_reference, obj) = _get_subscription(chat_id)
+    obj[u'publication_count'] += 1
+    document_reference.set(obj)
     return obj
 
 def unsubscribe(chat_id: int) -> bool:
@@ -90,11 +108,7 @@ def read() -> list:
         .where(u'next_publication_epoch', u'<', datetime.now().timestamp())\
         .stream()
     for document_snapshot in docs:
-        result = {
-            'chat_id': document_snapshot.get(u'chat_id'),
-            'interval_s': document_snapshot.get(u'interval_s'),
-            'publication_count': document_snapshot.get(u'publication_count'),
-        }
+        result = document_snapshot.to_dict()
         results.append(result)
         document_reference = get_subscriber(result['chat_id'])
         document_reference.update({

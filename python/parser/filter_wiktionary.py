@@ -15,10 +15,11 @@ section_splitter = re.compile("===([^\n=]*)===[^=]", flags=re.DOTALL)
 skip_sections = re.compile("Alternative forms|Anagrams|Conjugation|Etymology|Further reading|Letter|Proper noun|Quotations|References|See also")
 undesired_pronunciation = re.compile("\* (?:|{{[a-z]*-[a-z]*}} ){{[a-z]*-IPA(?:|\|pos=[a-z]*)}}[^*]*", flags=re.DOTALL)
 undesired_definitions = re.compile("{{[^|]*(?:alt form|alt sp| of|topics)[|][^}]*}}")
+missing_definitions = re.compile(r"{{rfdef\|")
 undesired_tags = re.compile("<ref>[^<]*</ref>")
 undesired_brackets = re.compile("\[\[Category[^\]]*\]\]")
 undesired_dashes = re.compile("-+$")
-undesired_subsections = re.compile("====(?:Conjugation|Descendants|Quotations|Related terms|See also)====[^=]*")
+undesired_subsections = re.compile("====(?:Conjugation|Descendants|Quotations|Related terms|See also)====.*", flags=re.DOTALL)
 title = ""
 with bz2.open(sys.argv[3], "rb") as fp:
     context = etree.iterparse(fp, events=('end',))
@@ -55,6 +56,8 @@ with bz2.open(sys.argv[3], "rb") as fp:
                         if skip_sections.match(section_name):
                             continue
                         definition = sections[i+1]
+                        if undesired_definitions.search(definition):
+                            continue
                         if undesired_definitions.search(definition):
                             continue
                         definition = undesired_tags.sub("", definition)
