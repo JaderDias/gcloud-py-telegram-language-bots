@@ -10,8 +10,7 @@ from datetime import datetime, timedelta
 from time import sleep
 from telegram.ext import Updater
 
-def get_updater(language: str) -> Updater:
-    token = Secrets.access_secret_version(f"telegram-{language}-token")
+def get_updater(language: str, token: str) -> Updater:
     Storage.get_dictionary(language)
     updater = Telegram.get_updater(token)
     subscriptions = Firestore.read()
@@ -26,8 +25,9 @@ def app(event, context) -> None:
     if language == "":
         logger.info("no language found")
         return
+    token = Secrets.access_secret_version(f"telegram-{language}-token")
     try:
-        updater = get_updater(language)
+        updater = get_updater(language, token)
         sleep((end_time - datetime.now()).total_seconds())
 
         if updater.persistence:
@@ -43,8 +43,9 @@ if __name__ == '__main__':
     if language == "":
         logger.info("no language found")
         exit()
+    token = Secrets.access_secret_version(f"telegram-dev-token")
     try:
-        updater = get_updater(language)
+        updater = get_updater(language, token)
 
         # Run the bot until you press Ctrl-C or the process receives SIGINT,
         # SIGTERM or SIGABRT. This should be used most of the time, since
