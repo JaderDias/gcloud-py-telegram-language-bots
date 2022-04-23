@@ -8,6 +8,7 @@ import Storage
 import Telegram
 
 from datetime import datetime, timedelta
+import os
 from time import sleep
 from telegram import ParseMode
 from telegram.ext import Updater
@@ -47,8 +48,8 @@ def app(event, context) -> None:
     PubSub.publish(language)
 
 if __name__ == '__main__':
-    language = "sh"
-    Firestore.set_language(language)
+    os.environ["LANGUAGE_CODE"] = "sh"
+    language = Firestore.get_language()
     token = Secrets.access_secret_version(f"telegram-dev-token")
     updater = get_updater(language, token)
 
@@ -56,3 +57,4 @@ if __name__ == '__main__':
     # SIGTERM or SIGABRT. This should be used most of the time, since
     # start_polling() is non-blocking and will stop the bot gracefully.
     updater.idle()
+    PubSub.publish(language)

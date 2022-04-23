@@ -25,6 +25,9 @@ resource "google_cloudfunctions_function" "function" {
   available_memory_mb   = 256
   source_archive_bucket = var.source_bucket_name
   source_archive_object = google_storage_bucket_object.zip.name
+  environment_variables = {
+    LANGUAGE_CODE = var.language_code
+  }
   event_trigger {
     event_type = "google.pubsub.topic.publish"
     resource   = var.pubsub_topic_name

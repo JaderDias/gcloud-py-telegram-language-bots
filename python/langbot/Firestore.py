@@ -3,30 +3,27 @@ from Logger import logger
 
 from google.cloud import firestore
 from datetime import datetime
+import os
 
 db = firestore.Client()
 
-def set_language(language_s: str) -> None:
-    global language
-    language = language_s
-
 def get_language() -> str:
-    collection = db.collection(Constants.LANGUAGE_COLLECTION)
-    docs = collection.stream()
-    for document_snapshot in docs:
+    global language
+    language = os.getenv('LANGUAGE_CODE')
+    print(language)
+    document_reference = db.document(Constants.LANGUAGE_COLLECTION, language)
+    document_snapshot = document_reference.get()
+    obj = {
+        u"id": language,
+        u"last_run_epoch": datetime.now().timestamp(),
+        u"next_run_epoch": datetime.now().timestamp() + 600,
+    }
+    if document_snapshot.exists:
         if document_snapshot.get(u"next_run_epoch") > datetime.now().timestamp():
-            continue
-        document_reference = db.document(Constants.LANGUAGE_COLLECTION, document_snapshot.get(u"id"))
-        set_language(document_snapshot.get(u"id"))
-        last_run_epoch = datetime.now().timestamp()
-        next_run_epoch = last_run_epoch + 600
-        logger.info(f"language {language} last_run_epoch {last_run_epoch} next_run_epoch {next_run_epoch}")
-        document_reference.update({
-            u'last_run_epoch': last_run_epoch,
-            u'next_run_epoch': next_run_epoch,
-        })
-        return language
-    return ""
+            return ""
+        obj = document_snapshot.to_dict()
+    document_reference.set(obj)
+    return language
 
 def release_lock():
     document_reference = db.document(Constants.LANGUAGE_COLLECTION, language)
