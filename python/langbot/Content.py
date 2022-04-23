@@ -1,4 +1,5 @@
 import Storage
+from Logger import logger
 import random
 import re
 
@@ -50,8 +51,9 @@ def get(language: str, subscription: dict) -> str:
     return None
 
 def get_quiz(language: str, subscription: dict) -> list:
-    max_index = min(subscription["publication_count"], 1000)
+    max_index = max(subscription["publication_count"], 15000)
     random_index = random.randint(0, max_index)
+    logger.info(f"random_index {random_index}")
     result = []
     grammatical_class = ""
     with open(f"/tmp/{language}", "r") as file_obj:
