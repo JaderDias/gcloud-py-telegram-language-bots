@@ -21,10 +21,8 @@ def _parse(line: str) -> tuple:
     title = title_match[0]
     definition = title_match[1]
     definition = escaped_new_line.sub("\n", definition)
-    # print(definition)
     definition = undesired_sections.sub("", definition)
     definition = curly_link_search.sub(r"(_\1_)", definition)
-    # print(definition)
     definition = square_link_search_1.sub(r"\1", definition)    
     definition = square_link_search_2.sub(r"\1", definition)
     main_definition = main_definition_searcher.search(definition)

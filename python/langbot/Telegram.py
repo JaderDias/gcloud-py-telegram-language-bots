@@ -75,9 +75,9 @@ def answer_quiz_button(update: Update, context: CallbackContext) -> None:
     buttons = []
     for word in words:
         buttons.append((word, "done"))
-    print(buttons)
+    logger.info(buttons)
     reply_markup = _get_markup(buttons)
-    print(reply_markup)
+    logger.info(reply_markup)
     query.edit_message_reply_markup(reply_markup)
 
 def subscribe(update: Update, interval_s: int, is_quiz: bool) -> None:

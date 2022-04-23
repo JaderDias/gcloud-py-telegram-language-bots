@@ -10,18 +10,20 @@ db = firestore.Client()
 def get_language() -> str:
     global language
     language = os.getenv('LANGUAGE_CODE')
-    print(language)
+    logger.info(f"Language: {language}")
     document_reference = db.document(Constants.LANGUAGE_COLLECTION, language)
     document_snapshot = document_reference.get()
+    if document_snapshot.exists:
+        obj = document_snapshot.to_dict()
+        logger.info(obj)
+        if document_snapshot.get(u"next_run_epoch") > datetime.now().timestamp():
+            return ""
     obj = {
         u"id": language,
         u"last_run_epoch": datetime.now().timestamp(),
         u"next_run_epoch": datetime.now().timestamp() + 600,
     }
-    if document_snapshot.exists:
-        if document_snapshot.get(u"next_run_epoch") > datetime.now().timestamp():
-            return ""
-        obj = document_snapshot.to_dict()
+    logger.info(obj)
     document_reference.set(obj)
     return language
 
