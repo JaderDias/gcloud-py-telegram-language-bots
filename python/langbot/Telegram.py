@@ -79,6 +79,9 @@ def answer_quiz_button(update: Update, context: CallbackContext) -> None:
     reply_markup = _get_markup(buttons)
     logger.info(reply_markup)
     query.edit_message_reply_markup(reply_markup)
+    subscription = Firestore.get_subscription(update.effective_chat.id)
+    (quiz, reply_markup) = get_quiz(subscription.get(u'language'), subscription)
+    updater.bot.send_message(chat_id=update.effective_chat.id, text=quiz, parse_mode=ParseMode.MARKDOWN_V2, reply_markup=reply_markup)
 
 def subscribe(update: Update, interval_s: int, is_quiz: bool) -> None:
     subscription = Firestore.subscribe(update.effective_chat.id, interval_s, is_quiz)
@@ -117,6 +120,7 @@ def log(update: Update, context: CallbackContext) -> None:
 
 def get_updater(token: str) -> Updater:
     # Create the Updater and pass it your bot's token.
+    global updater
     updater = Updater(token)
 
     # Get the dispatcher to register handlers

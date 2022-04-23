@@ -14,6 +14,7 @@ from telegram import ParseMode
 from telegram.ext import Updater
 
 def get_updater(language: str, token: str) -> Updater:
+    logger.info(f"get_updater {language}")
     Storage.get_dictionary(language)
     updater = Telegram.get_updater(token)
     subscriptions = Firestore.read()
@@ -50,6 +51,8 @@ def app(event, context) -> None:
 if __name__ == '__main__':
     os.environ["LANGUAGE_CODE"] = "sh"
     language = Firestore.get_language()
+    if language == "":
+        language = "sh"
     token = Secrets.access_secret_version(f"telegram-dev-token")
     updater = get_updater(language, token)
 
