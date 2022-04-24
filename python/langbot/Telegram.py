@@ -1,6 +1,6 @@
 import Constants
 import Content
-import Firestore
+import Firestore.Subscriber
 from Logger import logger
 
 import html
@@ -24,13 +24,13 @@ def start_command(update: Update, context: CallbackContext) -> None:
 """)
 
 def word_command(update: Update, context: CallbackContext) -> None:
-    subscription = Firestore.get_subscription_and_update_count(update.effective_chat.id)
+    subscription = Firestore.Subscriber.get_subscription_and_update_count(language, update.effective_chat.id)
     content = Content.get(subscription.get(u'language'), subscription)
     update.message.reply_markdown_v2(content)
 
 def quiz_command(update: Update, context: CallbackContext) -> None:
     """Sends a message with three inline buttons attached."""
-    subscription = Firestore.get_subscription(update.effective_chat.id)
+    subscription = Firestore.Subscriber.get_subscription(language, update.effective_chat.id)
     (quiz, reply_markup) = get_quiz(subscription.get(u'language'), subscription)
     update.message.reply_markdown_v2(quiz, reply_markup=reply_markup)
 
@@ -79,12 +79,12 @@ def answer_quiz_button(update: Update, context: CallbackContext) -> None:
     reply_markup = _get_markup(buttons)
     logger.info(reply_markup)
     query.edit_message_reply_markup(reply_markup)
-    subscription = Firestore.get_subscription(update.effective_chat.id)
+    subscription = Firestore.Subscriber.get_subscription(language, update.effective_chat.id)
     (quiz, reply_markup) = get_quiz(subscription.get(u'language'), subscription)
     updater.bot.send_message(chat_id=update.effective_chat.id, text=quiz, parse_mode=ParseMode.MARKDOWN_V2, reply_markup=reply_markup)
 
 def subscribe(update: Update, interval_s: int, is_quiz: bool) -> None:
-    subscription = Firestore.subscribe(update.effective_chat.id, interval_s, is_quiz)
+    subscription = Firestore.Subscriber.subscribe(language, update.effective_chat.id, interval_s, is_quiz)
     if subscription == None:
         update.message.reply_text("already subscribed")
         return
@@ -109,7 +109,7 @@ def hourly_quiz_command(update: Update, context: CallbackContext) -> None:
 
 def unsubscribe_command(update: Update, context: CallbackContext) -> None:
     reply = "already unsubscribed"
-    if Firestore.unsubscribe(update.effective_chat.id):
+    if Firestore.Subscriber.unsubscribe(language, update.effective_chat.id):
         reply = "unsubscription successful"
     update.message.reply_text(reply)
 
@@ -118,8 +118,10 @@ def log(update: Update, context: CallbackContext) -> None:
     user = update.effective_user
     logger.info(f"User {user.mention_markdown_v2()} chat_id {update.effective_chat.id} says {update.message.text}")
 
-def get_updater(token: str) -> Updater:
+def get_updater(_language:str, token: str) -> Updater:
     # Create the Updater and pass it your bot's token.
+    global language
+    language = _language
     global updater
     updater = Updater(token)
 

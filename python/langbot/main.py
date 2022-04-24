@@ -1,7 +1,8 @@
 import Constants
 import Content
 from Logger import logger
-import Firestore
+import Firestore.Language
+import Firestore.Subscriber
 import PubSub
 import Secrets
 import Storage
@@ -16,8 +17,8 @@ from telegram.ext import Updater
 def get_updater(language: str, token: str) -> Updater:
     logger.info(f"get_updater {language}")
     Storage.get_dictionary(language)
-    updater = Telegram.get_updater(token)
-    subscriptions = Firestore.read()
+    updater = Telegram.get_updater(language, token)
+    subscriptions = Firestore.Subscriber.get_pending_messages(language)
     for subscription in subscriptions:
         if subscription['is_quiz']:
             (content, reply_markup) = Telegram.get_quiz(subscription.get(u'language'), subscription)
@@ -28,7 +29,7 @@ def get_updater(language: str, token: str) -> Updater:
 
 def app(event, context) -> None:
     end_time = datetime.now() + timedelta(minutes=8)
-    language = Firestore.get_language()
+    language = Firestore.Language.get()
     if language == "":
         logger.info("no language found")
         return
@@ -45,12 +46,12 @@ def app(event, context) -> None:
             updater.persistence.flush()
         updater.stop()
     finally:
-        Firestore.release_lock()
+        Firestore.Language.release_lock(language)
     PubSub.publish(language)
 
 if __name__ == '__main__':
     os.environ["LANGUAGE_CODE"] = "sh"
-    language = Firestore.get_language()
+    language = Firestore.Language.get()
     if language == "":
         language = "sh"
     token = Secrets.access_secret_version(f"telegram-dev-token")
