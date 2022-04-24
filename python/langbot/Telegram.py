@@ -14,6 +14,16 @@ from telegram.ext import CallbackContext, CallbackQueryHandler, CommandHandler, 
 from time import sleep
 import traceback
 
+"""
+word - Shows the definition of a word
+daily_word - Subscribes to the word of the day
+hourly_word - Subscribes to the word of the hour
+quiz - Tests your knowledge about the meaning of a word
+daily_quiz - Subscribes to the quiz of the day
+hourly_quiz - Subscribes to the quiz of the hour
+unsubscribe - Unsubscribes from all subscriptions
+"""
+
 def start_command(update: Update, context: CallbackContext) -> None:
     update.message.reply_text(f"""/word: replies the next word definition
 /daily_word: subscribes to the word of the day
