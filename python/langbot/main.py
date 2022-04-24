@@ -26,10 +26,10 @@ def get_updater(language: str, token: str) -> Updater:
             if not Firestore.Message.is_answered(language, chat_id):
                 continue
             Firestore.Message.add(language, chat_id, is_answer=False)
-            (content, reply_markup) = Telegram.get_quiz(subscription.get(u'language'), subscription)
-        else:
-            content = Content.get(language, subscription)
-        updater.bot.send_message(chat_id, text=content, parse_mode=ParseMode.MARKDOWN_V2, reply_markup=reply_markup)
+            Telegram.quiz(updater, chat_id, subscription["publication_count"])
+            continue
+        content = Content.get(language, subscription)
+        updater.bot.send_message(chat_id, text=content, reply_markup=reply_markup)
     return updater
 
 def app(event, context) -> None:

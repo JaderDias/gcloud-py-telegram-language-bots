@@ -8,8 +8,19 @@ import html
 import json
 import random
 import re
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update, ParseMode, ForceReply
-from telegram.ext import CallbackContext, CallbackQueryHandler, CommandHandler, Filters, MessageHandler, Updater
+from telegram import\
+    ForceReply,\
+    Message,\
+    ParseMode,\
+    Poll,\
+    Update
+from telegram.ext import\
+    CallbackContext,\
+    CommandHandler,\
+    Filters,\
+    MessageHandler,\
+    PollHandler,\
+    Updater
 
 from time import sleep
 import traceback
@@ -37,87 +48,87 @@ def start_command(update: Update, context: CallbackContext) -> None:
 def word_command(update: Update, context: CallbackContext) -> None:
     subscription = Firestore.Subscriber.get_subscription_and_update_count(language, update.effective_chat.id)
     content = Content.get(subscription.get(u'language'), subscription)
-    update.message.reply_markdown_v2(content)
+    update.message.reply_text(content)
+
+def get_quiz(publication_count: int) -> tuple:
+    words = Content.get_quiz(language, publication_count)
+    correct_option_id = random.randint(1, len(words)) - 1
+    logger.info(f"words {words} correct_option_id {correct_option_id}")
+    correct_answer = words[correct_option_id]
+    question = f"{correct_answer[2]} ({correct_answer[1]})"
+    options = []
+    for word in words:
+        options.append(word[0])
+    return (question, options, correct_option_id)
+
+def _get_payload(message: Message, chat_id: int, publication_count: int) -> dict:
+    return {
+        message.poll.id: {
+            "chat_id": chat_id,
+            "message_id": message.message_id,
+            "publication_count": publication_count,
+            "answers": 0,
+        }
+    }
+
+def _quiz(update: Update, context: CallbackContext, publication_count: int) -> None:
+    (question, options, correct_option_id) = get_quiz(publication_count)
+    message = update.message.reply_poll(
+        question,
+        options,
+        type=Poll.QUIZ,
+        correct_option_id=correct_option_id,
+    )
+    payload = _get_payload(message, update.effective_chat.id, publication_count)
+    context.bot_data.update(payload)
+
+def quiz(updater: Updater, chat_id: int, publication_count: int) -> None:
+    (question, options, correct_option_id) = get_quiz(publication_count)
+    message = updater.bot.send_poll(
+        chat_id,
+        question,
+        options,
+        type=Poll.QUIZ,
+        correct_option_id=correct_option_id,
+    )
+    payload = _get_payload(message, chat_id, publication_count)
+    updater.dispatcher.bot_data.update(payload)
 
 def quiz_command(update: Update, context: CallbackContext) -> None:
     """Sends a message with three inline buttons attached."""
     subscription = Firestore.Subscriber.get_subscription(language, update.effective_chat.id)
-    (quiz, reply_markup) = get_quiz(subscription.get(u'language'), subscription)
-    update.message.reply_markdown_v2(quiz, reply_markup=reply_markup)
+    _quiz(update, context, subscription["publication_count"])
 
-def _get_markup(buttons: list) -> InlineKeyboardMarkup:
-    keyboard = [
-        [InlineKeyboardButton(buttons[0][0], callback_data=buttons[0][1])],
-        [InlineKeyboardButton(buttons[1][0], callback_data=buttons[1][1])],
-        [InlineKeyboardButton(buttons[2][0], callback_data=buttons[2][1])],
-    ]
-    return InlineKeyboardMarkup(keyboard)
+def receive_quiz_answer(update: Update, context: CallbackContext) -> None:
+    quiz_data = context.bot_data[update.poll.id]
+    chat_id = quiz_data["chat_id"]
+    Firestore.Message.add(language, chat_id, is_answer=True)
+    quiz_data["answers"] += 1
+    if quiz_data["answers"] == 1:
+        quiz(updater, chat_id, quiz_data["publication_count"])
 
-def get_quiz(language: str, subscription: dict) -> tuple:
-    words = Content.get_quiz(language, subscription)
-    correct_answer_index = random.randint(0, 2)
-    correct_answer = words[correct_answer_index]
-    buttons = []
-    for i in range(len(words)):
-        callback_data = []
-        for j in range(len(words)):
-            if j == correct_answer_index:
-                callback_data.append(f"✔ {words[j][0]} ✔")
-            elif i == j:
-                callback_data.append(f"❌ {words[j][0]} ❌")
-            else:
-                callback_data.append(f"  {words[j][0]}  ")
-        callback_data = "\n".join(callback_data)
-        buttons.append((f"  {words[i][0]}  ", callback_data))
-    reply_markup = _get_markup(buttons)
-    quiz = f"{correct_answer[2]} \\({correct_answer[1]}\\)"
-    return (quiz, reply_markup)
-
-def answer_quiz_button(update: Update, context: CallbackContext) -> None:
-    """Parses the CallbackQuery and updates the message text."""
-    query = update.callback_query
-    # CallbackQueries need to be answered, even if no notification to the user is needed
-    # Some clients may have trouble otherwise. See https://core.telegram.org/bots/api#callbackquery
-    query.answer()
-    message = "" + query.data
-    if message == "done":
-        return
-    Firestore.Message.add(language, update.effective_chat.id, is_answer=True)
-    words = message.split("\n")
-    buttons = []
-    for word in words:
-        buttons.append((word, "done"))
-    logger.info(buttons)
-    reply_markup = _get_markup(buttons)
-    logger.info(reply_markup)
-    query.edit_message_reply_markup(reply_markup)
-    subscription = Firestore.Subscriber.get_subscription(language, update.effective_chat.id)
-    (quiz, reply_markup) = get_quiz(subscription.get(u'language'), subscription)
-    updater.bot.send_message(chat_id=update.effective_chat.id, text=quiz, parse_mode=ParseMode.MARKDOWN_V2, reply_markup=reply_markup)
-
-def subscribe(update: Update, interval_s: int, is_quiz: bool) -> None:
+def subscribe(update: Update, context: CallbackContext, interval_s: int, is_quiz: bool) -> None:
     subscription = Firestore.Subscriber.subscribe(language, update.effective_chat.id, interval_s, is_quiz)
     if subscription == None:
         update.message.reply_text("already subscribed")
         return
     if is_quiz:
-        (quiz, reply_markup) = get_quiz(subscription.get(u'language'), subscription)
-        update.message.reply_markdown_v2(quiz, reply_markup=reply_markup)
+        _quiz(update, context, subscription["publication_count"])
         return
     content = Content.get(subscription.get(u'language'), subscription)
-    update.message.reply_markdown_v2(content)
+    update.message.reply_text(content)
 
 def daily_word_command(update: Update, context: CallbackContext) -> None:
-    subscribe(update, interval_s=86400, is_quiz=False)
+    subscribe(update, context, interval_s=86400, is_quiz=False)
 
 def hourly_word_command(update: Update, context: CallbackContext) -> None:
-    subscribe(update, interval_s=3600, is_quiz=False)
+    subscribe(update, context, interval_s=3600, is_quiz=False)
 
 def daily_quiz_command(update: Update, context: CallbackContext) -> None:
-    subscribe(update, interval_s=86400, is_quiz=True)
+    subscribe(update, context, interval_s=86400, is_quiz=True)
 
 def hourly_quiz_command(update: Update, context: CallbackContext) -> None:
-    subscribe(update, interval_s=3600, is_quiz=True)
+    subscribe(update, context, interval_s=3600, is_quiz=True)
 
 def unsubscribe_command(update: Update, context: CallbackContext) -> None:
     reply = "already unsubscribed"
@@ -145,6 +156,7 @@ def get_updater(_language:str, token: str) -> Updater:
     dispatcher.add_handler(CommandHandler("help", start_command))
     dispatcher.add_handler(CommandHandler("word", word_command))
     dispatcher.add_handler(CommandHandler("quiz", quiz_command))
+    dispatcher.add_handler(PollHandler(receive_quiz_answer))
     dispatcher.add_handler(CommandHandler("daily_word", daily_word_command))
     dispatcher.add_handler(CommandHandler("hourly_word", hourly_word_command))
     dispatcher.add_handler(CommandHandler("daily_quiz", daily_quiz_command))
@@ -154,8 +166,6 @@ def get_updater(_language:str, token: str) -> Updater:
     # on non command i.e message - log the message
     dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, log))
 
-    updater.dispatcher.add_handler(CallbackQueryHandler(answer_quiz_button))
-    
     # Start the Bot
     updater.start_polling()
 
