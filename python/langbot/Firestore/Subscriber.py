@@ -8,7 +8,7 @@ import os
 db = firestore.Client()
 
 def get_subscriber(language:str, chat_id: int) -> firestore.DocumentReference:
-    return db.document(Constants.WORD_SUBSCRIBER_COLLECTION, f"{language}{chat_id}")
+    return db.document(Constants.SUBSCRIBER_COLLECTION, f"{language}{chat_id}")
 
 def is_subscribed(document_snapshot: firestore.DocumentSnapshot) -> bool:
     if not document_snapshot.exists:
@@ -75,7 +75,7 @@ def unsubscribe(language: str, chat_id: int) -> bool:
 
 def get_pending_messages(language: str) -> list:
     results = []
-    collection = db.collection(Constants.WORD_SUBSCRIBER_COLLECTION)
+    collection = db.collection(Constants.SUBSCRIBER_COLLECTION)
     docs = collection\
         .where(u'language', u'==', language)\
         .where(u'next_publication_epoch', u'<', datetime.now().timestamp())\

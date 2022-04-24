@@ -2,6 +2,7 @@ import Constants
 import Content
 from Logger import logger
 import Firestore.Language
+import Firestore.Message
 import Firestore.Subscriber
 import PubSub
 import Secrets
@@ -21,6 +22,9 @@ def get_updater(language: str, token: str) -> Updater:
     subscriptions = Firestore.Subscriber.get_pending_messages(language)
     for subscription in subscriptions:
         if subscription['is_quiz']:
+            if not Firestore.Message.is_answered():
+                continue
+            Firestore.Message.add(language, subscription['chat_id'], is_answer=False)
             (content, reply_markup) = Telegram.get_quiz(subscription.get(u'language'), subscription)
         else:
             content = Content.get(language, subscription)

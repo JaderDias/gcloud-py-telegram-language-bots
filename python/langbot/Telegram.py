@@ -1,5 +1,6 @@
 import Constants
 import Content
+import Firestore.Message
 import Firestore.Subscriber
 from Logger import logger
 
@@ -71,6 +72,7 @@ def answer_quiz_button(update: Update, context: CallbackContext) -> None:
     message = "" + query.data
     if message == "done":
         return
+    Firestore.Message.add(language, update.effective_chat.id, is_answer=True)
     words = message.split("\n")
     buttons = []
     for word in words:
