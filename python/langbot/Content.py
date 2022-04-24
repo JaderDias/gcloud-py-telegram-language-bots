@@ -26,6 +26,7 @@ def _parse(line: str) -> tuple:
     definition = square_link_search_1.sub(r"\1", definition)    
     definition = square_link_search_2.sub(r"\1", definition)
     main_definition = main_definition_searcher.search(definition)
+    grammatical_class = None
     if main_definition:
         grammatical_class = main_definition.groups()[0]
         main_definition = main_definition.groups()[1]

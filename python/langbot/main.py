@@ -21,14 +21,15 @@ def get_updater(language: str, token: str) -> Updater:
     updater = Telegram.get_updater(language, token)
     subscriptions = Firestore.Subscriber.get_pending_messages(language)
     for subscription in subscriptions:
+        chat_id = subscription['chat_id']
         if subscription['is_quiz']:
-            if not Firestore.Message.is_answered():
+            if not Firestore.Message.is_answered(language, chat_id):
                 continue
-            Firestore.Message.add(language, subscription['chat_id'], is_answer=False)
+            Firestore.Message.add(language, chat_id, is_answer=False)
             (content, reply_markup) = Telegram.get_quiz(subscription.get(u'language'), subscription)
         else:
             content = Content.get(language, subscription)
-        updater.bot.send_message(chat_id=subscription['chat_id'], text=content, parse_mode=ParseMode.MARKDOWN_V2, reply_markup=reply_markup)
+        updater.bot.send_message(chat_id, text=content, parse_mode=ParseMode.MARKDOWN_V2, reply_markup=reply_markup)
     return updater
 
 def app(event, context) -> None:
