@@ -1,6 +1,6 @@
 import Constants
 import Content
-import Firestore.Message
+import Firestore.Poll
 import Firestore.Subscriber
 from Logger import logger
 
@@ -50,7 +50,7 @@ def word_command(update: Update, context: CallbackContext) -> None:
     content = Content.get(subscription.get(u'language'), subscription)
     update.message.reply_text(content)
 
-def get_quiz(publication_count: int) -> tuple:
+def _get_quiz(publication_count: int) -> tuple:
     words = Content.get_quiz(language, publication_count)
     correct_option_id = random.randint(1, len(words)) - 1
     logger.info(f"words {words} correct_option_id {correct_option_id}")
@@ -61,29 +61,10 @@ def get_quiz(publication_count: int) -> tuple:
         options.append(word[0])
     return (question, options, correct_option_id)
 
-def _get_payload(message: Message, chat_id: int, publication_count: int) -> dict:
-    return {
-        message.poll.id: {
-            "chat_id": chat_id,
-            "message_id": message.message_id,
-            "publication_count": publication_count,
-            "answers": 0,
-        }
-    }
-
-def _quiz(update: Update, context: CallbackContext, publication_count: int) -> None:
-    (question, options, correct_option_id) = get_quiz(publication_count)
-    message = update.message.reply_poll(
-        question,
-        options,
-        type=Poll.QUIZ,
-        correct_option_id=correct_option_id,
-    )
-    payload = _get_payload(message, update.effective_chat.id, publication_count)
-    context.bot_data.update(payload)
-
-def quiz(updater: Updater, chat_id: int, publication_count: int) -> None:
-    (question, options, correct_option_id) = get_quiz(publication_count)
+def quiz(updater: Updater, chat_id: int, subscription: dict) -> None:
+    if not subscription:
+        subscription = Firestore.Subscriber.get_subscription(language, chat_id)
+    (question, options, correct_option_id) = _get_quiz(subscription["publication_count"])
     message = updater.bot.send_poll(
         chat_id,
         question,
@@ -91,21 +72,15 @@ def quiz(updater: Updater, chat_id: int, publication_count: int) -> None:
         type=Poll.QUIZ,
         correct_option_id=correct_option_id,
     )
-    payload = _get_payload(message, chat_id, publication_count)
-    updater.dispatcher.bot_data.update(payload)
+    Firestore.Poll.create(language, chat_id, message.poll.id, options[correct_option_id])
 
 def quiz_command(update: Update, context: CallbackContext) -> None:
-    """Sends a message with three inline buttons attached."""
-    subscription = Firestore.Subscriber.get_subscription(language, update.effective_chat.id)
-    _quiz(update, context, subscription["publication_count"])
+    quiz(updater, update.effective_chat.id, None)
 
 def receive_quiz_answer(update: Update, context: CallbackContext) -> None:
-    quiz_data = context.bot_data[update.poll.id]
-    chat_id = quiz_data["chat_id"]
-    Firestore.Message.add(language, chat_id, is_answer=True)
-    quiz_data["answers"] += 1
-    if quiz_data["answers"] == 1:
-        quiz(updater, chat_id, quiz_data["publication_count"])
+    poll = Firestore.Poll.get_and_increment_answer_count(update.poll.id)
+    if poll["answer_count"] == 0:
+        quiz(updater, poll["chat_id"], None)
 
 def subscribe(update: Update, context: CallbackContext, interval_s: int, is_quiz: bool) -> None:
     subscription = Firestore.Subscriber.subscribe(language, update.effective_chat.id, interval_s, is_quiz)
@@ -113,7 +88,7 @@ def subscribe(update: Update, context: CallbackContext, interval_s: int, is_quiz
         update.message.reply_text("already subscribed")
         return
     if is_quiz:
-        _quiz(update, context, subscription["publication_count"])
+        quiz(updater, update.effective_chat.id, subscription)
         return
     content = Content.get(subscription.get(u'language'), subscription)
     update.message.reply_text(content)

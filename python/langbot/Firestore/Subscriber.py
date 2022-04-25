@@ -7,7 +7,7 @@ import os
 
 db = firestore.Client()
 
-def get_subscriber(language:str, chat_id: int) -> firestore.DocumentReference:
+def _get_subscriber(language:str, chat_id: int) -> firestore.DocumentReference:
     return db.document(Constants.SUBSCRIBER_COLLECTION, f"{language}{chat_id}")
 
 def is_subscribed(document_snapshot: firestore.DocumentSnapshot) -> bool:
@@ -16,7 +16,7 @@ def is_subscribed(document_snapshot: firestore.DocumentSnapshot) -> bool:
     return document_snapshot.get(u'next_publication_epoch') < datetime.max.timestamp()
 
 def subscribe(language: str, chat_id: int, interval_s: int, is_quiz: bool) -> dict:
-    document_reference = get_subscriber(language, chat_id)
+    document_reference = _get_subscriber(language, chat_id)
     document_snapshot = document_reference.get()
     publication_count = -1
     if document_snapshot.exists:
@@ -38,7 +38,7 @@ def subscribe(language: str, chat_id: int, interval_s: int, is_quiz: bool) -> di
     return obj
 
 def _get_subscription(language: str, chat_id: int) -> tuple:
-    document_reference = get_subscriber(language, chat_id)
+    document_reference = _get_subscriber(language, chat_id)
     document_snapshot = document_reference.get()
     if document_snapshot.exists:
         return (document_reference, document_snapshot.to_dict())
@@ -64,7 +64,7 @@ def get_subscription_and_update_count(language: str, chat_id: int) -> dict:
     return obj
 
 def unsubscribe(language: str, chat_id: int) -> bool:
-    document_reference = get_subscriber(language, chat_id)
+    document_reference = _get_subscriber(language, chat_id)
     document_snapshot = document_reference.get()
     if not is_subscribed(document_snapshot):
         return False
@@ -83,7 +83,7 @@ def get_pending_messages(language: str) -> list:
     for document_snapshot in docs:
         result = document_snapshot.to_dict()
         results.append(result)
-        document_reference = get_subscriber(language, result['chat_id'])
+        document_reference = _get_subscriber(language, result['chat_id'])
         document_reference.update({
             u'last_publication_epoch': datetime.now().timestamp(),
             u'next_publication_epoch': datetime.now().timestamp() + result["interval_s"],

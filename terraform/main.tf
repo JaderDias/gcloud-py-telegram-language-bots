@@ -111,9 +111,9 @@ resource "google_firestore_index" "subscriber_language" {
   }
 }
 
-resource "google_firestore_index" "message_chat_epoch" {
+resource "google_firestore_index" "poll_chat_epoch" {
   project    = var.project
-  collection = "Message"
+  collection = "Poll"
   fields {
     field_path = "language"
     order      = "ASCENDING"
