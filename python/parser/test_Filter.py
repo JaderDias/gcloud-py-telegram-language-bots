@@ -12,7 +12,9 @@ class TestFilter(unittest.TestCase):
                 redirect_stdout(buf):
             Filter.filter("Portuguese", "A-Zãáàâçéêíõóôúü", file_pointer)
             actual = buf.getvalue()
-        expected = r"""piar===Verb===\n{{pt-verb|pi|ar}}\n\n# to {{l|en|chirp}} {{gloss|to make a short, sharp sound, as of small birds}}\n# {{lb|pt|by extension}} to {{l|en|chat}}\n#: {{syn|pt|falar}}
+        print(actual)
+        expected = r"""LED===Pronunciation===\n{{pt-IPA|pt=léd(e)}}\n* {{a|Brazil}} {{IPA|pt|/ˈlɛd͡ʒ/}}\n\n===Noun===\n{{pt-noun|m|s}}\n\n# {{l|en|LED}} {{gloss|light-emitting diode}}\n#: {{syn|pt|díodo emissor de luz}}
+piar===Verb===\n{{pt-verb|pi|ar}}\n\n# to {{l|en|chirp}} {{gloss|to make a short, sharp sound, as of small birds}}\n# {{lb|pt|by extension}} to {{l|en|chat}}\n#: {{syn|pt|falar}}
 remontar===Verb===\n{{pt-verb|remont|ar}}\n\n# to [[remount]]\n# to [[reassemble]]
 abater===Pronunciation===\n{{pt-IPA|abatêr}}\n* {{hyphenation|pt|a|ba|ter}}\n\n===Verb===\n{{pt-verb|abat|er}}\n\n# {{lb|pt|intransitive}} to [[collapse]]\n# {{lb|pt|intransitive}} to [[topple]]\n# {{lb|pt|transitive}} to [[slaughter]]\n# {{lb|pt|intransitive}} to [[abate]], [[weaken]]\n# {{lb|pt|transitive}} to [[reduce]]\n# {{pt-verb-form-of|abater}}
 """

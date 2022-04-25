@@ -7,11 +7,11 @@ import re
 
 remove_other_languages = re.compile("\n==[^=].*$", flags=re.DOTALL)
 section_splitter = re.compile("===([^\n=]*)===[^=]", flags=re.DOTALL)
-skip_sections = re.compile("Alternative forms|Anagrams|Conjugation|Etymology|Further reading|Letter|Proper noun|Quotations|References|See also")
+skip_sections = re.compile("Alternative forms|Anagrams|Conjugation|Etymology|Further reading|Letter|Prefix|Proper noun|Quotations|References|See also")
 undesired_pronunciation = re.compile("\* (?:|{{[a-z]*-[a-z]*}} ){{[a-z]*-IPA(?:|\|pos=[a-z]*)}}[^*]*", flags=re.DOTALL)
 verb_form = re.compile(r"{{head\|[^|}]*\|verb form}}")
 verb_conjugation = re.compile(r"{{[^}-]*-([^|}]*)\|")
-undesired_definitions = re.compile("{{[^|]*(?:alt form|alt sp| of|topics)[|][^}]*}}")
+undesired_definitions = re.compile("{{[^|]*(?:alt form|alt sp| of|prefixsee|prefixusex|topics)[|][^}]*}}")
 missing_definitions = re.compile(r"{{rfdef\|")
 undesired_tags = re.compile("<ref>[^<]*</ref>")
 undesired_brackets = re.compile(r"\[\[Category[^\]]*\]\]")

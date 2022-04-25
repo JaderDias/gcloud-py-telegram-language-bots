@@ -54,7 +54,856 @@
       <namespace key="2303" case="case-sensitive">Gadget definition talk</namespace>
     </namespaces>
   </siteinfo>
+    <page>
+    <title>contra-</title>
+    <ns>0</ns>
+    <id>43675</id>
+    <revision>
+      <id>65124463</id>
+      <parentid>65124443</parentid>
+      <timestamp>2022-01-01T08:00:24Z</timestamp>
+      <contributor>
+        <username>PhalanxDown</username>
+        <id>3801808</id>
+      </contributor>
+      <comment>/* Prefix */ Added &quot;ob-&quot; as Synonym</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="2340" xml:space="preserve">{{also|contra|Contra|contrà}}
+==English==
 
+===Etymology===
+From {{bor|en|la|contra||against}}. {{doublet|en|counter-}}.
+
+===Prefix===
+{{en-prefix}}
+
+# [[against]]; in [[opposition]] to
+
+====Synonyms====
+* {{sense|against}} {{l|en|anti-}}, {{l|en|counter-}}, {{l|en|dis-}}, {{l|en|ob-}}
+
+====Derived terms====
+{{prefixsee|en}}
+{{rel-top4|terms derived from contra-}}
+* {{l|en|contraband}}
+* {{l|en|contradict}}
+{{rel-mid4}}
+* {{l|en|contradiction}}
+{{rel-mid4}}
+* {{l|en|contraindication}}
+* {{l|en|contraceptive}}
+{{rel-mid4}}
+* {{l|en|contrarotating}}
+* {{l|en|contrary}}
+{{rel-bottom}}
+
+===Anagrams===
+* {{anagrams|en|a=acnort|Cantor|Carnot|Carton|Catron|TRACON|cantor|carton|corant|craton|tracon}}
+
+[[Category:English unproductive prefixes]]
+
+----
+==Portuguese==
+
+===Etymology===
+From {{der|pt|la|contra||against}}.
+
+===Prefix===
+{{head|pt|prefix}}
+
+# [[counter-]] {{gloss|in opposition to}}
+
+====Derived terms====
+{{prefixsee|pt}}
+
+====Related terms====
+* {{l|pt|contra}}
+
+----
+
+</text>
+      <sha1>j0l60ujg69c9ru8btf5kkg597gxht1x</sha1>
+    </revision>
+  </page>
+
+ <page>
+    <title>a-</title>
+    <ns>0</ns>
+    <id>235</id>
+    <revision>
+      <id>66215788</id>
+      <parentid>66189879</parentid>
+      <timestamp>2022-03-24T21:12:43Z</timestamp>
+      <contributor>
+        <username>Djkcel</username>
+        <id>331460</id>
+      </contributor>
+      <comment>/* Etymology 3 */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="31029" xml:space="preserve">{{also|Appendix:Variations of &quot;a&quot;}}
+==Translingual==
+
+===Etymology===
+From the {{der|mul|grc|ἀ-|t=not, without}}.
+
+===Prefix===
+{{head|mul|prefix}}
+
+# {{non-gloss definition|Used to form words indicating a variant spelling of anti-}}
+
+====Derived terms====
+{{prefixsee|mul}}
+
+----
+
+==English==
+
+===Etymology 1===
+From {{inh|en|enm|a-|t=up, out, away}}, from {{inh|en|ang|ā-}}, originally {{m|ang|*ar-}}, {{m|ang|*or-}}, from {{inh|en|gmw-pro|*uʀ-}}, from {{inh|en|gem-pro|*uz-|t=out-}}, from {{inh|en|ine-pro|*uds-|t=up, out}}. Cognate with {{cog|osx|ā-}}, {{cog|de|er-}}.
+
+====Pronunciation====
+* {{IPA|en|/ə/}}
+
+====Prefix====
+{{en-prefix}}
+
+# {{lb|en|no longer productive}} {{non-gloss definition|Forming verbs with the sense ''away'', ''up'', ''on'', ''out''.}}
+#: '''''a'''rise, '''a'''wait''
+# {{lb|en|no longer productive}} {{non-gloss definition|Forming verbs with the sense of intensified action.}}
+#: '''''a'''bide, '''a'''maze''
+
+===Etymology 2===
+* From {{inh|en|enm|a-|t=on}}, derived from unstressed {{inh|en|enm|an|t=on}}, from {{inh|en|ang|an|t=on}}
+* See [[a]] {{qualifier|preposition|on, to, in, etc.}}
+
+====Pronunciation====
+* {{IPA|en|/ə/}}
+
+====Prefix====
+{{en-prefix}}
+
+# {{lb|en|rare|or|no longer productive}} [[in|In]], [[on]], [[at]]; used to show a state, condition, or manner.  Also passing into sense 2. {{defdate|First attested prior to 1150}}&lt;ref name=SOED&gt;Brown, Lesley (2003)&lt;/ref&gt;
+#: '''''a'''pace, '''a'''fire, '''a'''boil, '''a'''-bling''
+# {{lb|en|no longer productive}} In, into.  Also passing into sense 5. {{defdate|First attested prior to 1150}}&lt;ref name=SOED/&gt;
+#: '''''a'''sunder''
+# In the direction of, or [[toward]]. {{defdate|First attested prior to 1150}}&lt;ref name=SOED/&gt;
+#: '''''a'''stern, '''a'''beam''
+# {{lb|en|archaic|dialectal}} At such a time. {{defdate|First attested prior to 1150}}&lt;ref name=SOED/&gt;
+#: ''Come '''a'''-morning we are going hunting.''
+# {{lb|en|archaic|dialectal}} In the act or process of. Used in some dialects before a present participle.  {{defdate|First attested prior to 1150}}&lt;ref name=SOED/&gt;
+#* '''1777''', {{w|Thomas Arne}}, ''[[w:A-Hunting We Will Go|'''A'''-Hunting We Will Go]]''
+#* '''1780''', ''[[w:The Twelve Days of Christmas (song)|The Twelve Days of Christmas]]'':&lt;!-- Traditional lyrics, as per The Oxford Dictionary of Nursery Rhymes --&gt;
+#*: The twelfth day of Christmas,
+#*: My true love sent to me
+#*: Twelve lords '''a-'''leaping,
+#*: …
+#*: Eight maids '''a-'''milking,
+#*: Seven swans '''a-'''swimming,
+#*: Six geese '''a'''-laying,
+#* circa '''1850''', ''{{w|Here We Come A-wassailing}}/Here We Come A-caroling''
+#*: Here we come '''a-'''wassailing
+#*: Among the leaves so green;
+#*: Here we come '''a-'''wand’ring
+#*: So fair to be seen.
+#* '''1939''', {{w|Alfred Edward Housman}}, ''Additional Poems'', XIII, lines 6-7:
+#*: Oh waste no words '''a-'''wooing
+#*: The soft sleep to your bed;
+#* '''1964''', {{w|Bob Dylan}}, {{w|The Times They Are a-Changin' (song)|&quot;The Times They Are a-Changin'&amp;nbsp;&quot;}} (recorded 1963, released 1964):
+#*: The order is rapidly fadin'
+#*: And the first one now will later be last
+#*: For the times they are '''a-'''changin'
+#* circa '''1970''', bumper sticker:&lt;ref&gt;See “[http://tvtropes.org/pmwiki/pmwiki.php/Main/DontComeAKnockin Don’t Come A-Knockin’]”, ''TV Tropes'' for more examples and discussion.&lt;/ref&gt;
+#*: If the van’s '''a-'''rockin’, don’t come '''a-'''knockin’.
+
+===Etymology 3===
+{{senseid|en|ge|tag=p}}
+From {{inh|en|enm|a-}}, a variant form of {{m|enm|y-}}, from {{inh|en|ang|ġe-}}, from {{inh|en|gmw-pro|*ga-}}, from {{inh|en|gem-pro|*ga-}}, from {{der|en|ine-pro|*ḱóm|t=with}}.
+{{senseid-close|tag=p}}
+
+====Alternative forms====
+* {{alt|en|i-}}
+
+====Pronunciation====
+* {{IPA|en|/ə/}}
+
+====Prefix====
+{{en-prefix}}
+
+# {{alternative form of|en|y-}} {{lb|en|archaic|and|dialectal}} {{n-g|In dialect, it is sometimes conflated with sense 5 of the previous definition, and is used as a general indicator of a participle.}} {{defdate|First attested around 1150 to 1350 (Middle English).}}&lt;ref name=SOED/&gt;
+#: '''''a'''ware, '''a'''like''
+# {{lb|en|Devonshire}} {{n-g|Used to form the past participle of a verb.}}
+#: ''I have '''a-'''gone.''
+#: ''I have '''a-'''seen a bird.''
+
+===Etymology 4===
+From {{der|en|xno|a-}}, from {{der|en|fro|e-}}, from {{der|en|la|ex-}}.
+
+====Pronunciation====
+* {{IPA|en|/ə/}}
+
+====Prefix====
+{{en-prefix}}
+
+# {{lb|en|no longer productive}} {{non-gloss definition|Forming words with the sense of ''wholly'', or ''utterly'' ''out''.}} {{defdate|First attested from around 1150 to 1350.}}&lt;ref name=SOED/&gt;
+#: '''''a'''bash''
+
+===Etymology 5===
+From {{der|en|grc|ἀ-}} ({{m|grc|ἀν-}} immediately followed by a vowel).
+
+====Pronunciation====
+* {{a|US}} {{IPA|en|/eɪ/}}
+
+====Prefix====
+{{en-prefix}}
+
+# {{senseid|en|not}} [[not|Not]], without, opposite of.
+#: '''''a'''moral, '''a'''symmetry, '''a'''theism, '''a'''sexual, '''a'''cyclic, '''a'''typical''
+#* '''1948''' (revised 1952), {{w|Robert Graves}}, ''The White Goddess'', Faber &amp; Faber 1999, page 7:
+#*: When invited to believe in the Chimaera, the horse-centaurs, or the winged horse Pegasus, all of them straightforward Pelasgian cult-symbols, a philosopher felt bound to reject them as '''a'''-zoölogical improbabilities [...].
+#* '''2012''', Faramerz Dabhoiwala, ''The Origins of Sex'', Penguin 2013, page 191:
+#*: If aroused outside the proper outlet of marriage, [female lust] could range out of control, turning its possessor into an '''a-'''feminine monster: that is what happened to fallen women.
+
+=====Usage notes=====
+* This prefix is referred to as [[alpha privative]].
+* Used with stems that begin with consonants except sometimes ''h''. {{m|en|an-}} is synonymous and is used in front of words that start with vowels and sometimes ''h''.&lt;ref name=Rand&gt;Urdang, Laurence (1984) &lt;/ref&gt; For example, {{m|en|anesthetic}} and {{m|en|analgesic}}.
+
+=====Synonyms=====
+* {{sense|not}} {{l|en|an-}}, {{l|en|dys-}}, {{l|en|i-}}/{{l|en|il-}}/{{l|en|im-}}/{{l|en|in-}}/{{l|en|ir-}}, {{l|en|mal-}}, {{l|en|non-}}, {{l|en|un-}}
+
+=====Translations=====
+{{trans-top|not, without, opposite of}}
+* Asturian: {{t|ast|a-}}
+* Catalan: {{t+|ca|a-}}
+* Danish: {{t|da|-a}}
+* Dutch: {{t+|nl|a-}}
+* French: {{t+|fr|a-}}
+* Galician: {{t+|gl|a-}}
+* German: {{t+|de|a-}}
+* Italian: {{t+|it|a-}}
+* Latvian: {{t|lv|a-}}
+{{trans-mid}}
+* Norwegian:
+*: Bokmål: {{t+|nb|a-}}
+*: Nynorsk: {{t|nn|a-}}
+* Occitan: {{t|oc|a-}}
+* Polish: {{t+|pl|a-}}
+* Portuguese: {{t+|pt|a-}}
+* Serbo-Croatian:
+*: Cyrillic: {{t|sh|а-}}
+*: Roman: {{t|sh|a-}}
+* Spanish: {{t+|es|a-}}, {{t+|es|an-}}
+{{trans-bottom}}
+
+===Etymology 6===
+From {{inh|en|enm|a-}}, from {{der|en|frm|a-}}, from {{der|en|la|ad|t=towards}}.
+
+====Prefix====
+{{en-prefix}}
+
+# {{lb|en|no longer productive}} Towards; Used to indicate direction, reduction to, increase to, change into, or motion. {{defdate|First attested from around 1150 to 1350.}}&lt;ref name=SOED/&gt;
+#: '''''a'''scend, '''a'''spire, '''a'''mass, '''a'''bandon, '''a'''venue ''
+
+=====Usage notes=====
+* Used on stems that started with ''sc'', ''sp'', or ''st'', and also used on stems with a French origin.
+* Used in place of [[ad-]].&lt;ref&gt;Lindberg, Christine A. (2007)&lt;/ref&gt;
+
+===Etymology 7===
+From {{der|en|la|ab|t=of, off, from, away}}
+
+====Prefix====
+{{en-prefix}}
+
+# {{lb|en|no longer productive}} Away from. {{defdate|First attested from around 1150 to 1350.}}&lt;ref name=SOED/&gt;
+#: '''''a'''vert, '''a'''perient, '''a'''bridge, '''a'''ssoil,&lt;ref name=Rand/&gt; '''a'''ssoilzie''
+
+=====Usage notes=====
+* Variation of the prefix [[ab-]], only used when the stem starts with the letter ''p'' or ''v'', &lt;ref name=Rand/&gt; or (rarely) ''s'' in which case the ''s'' is doubled (as in ''assoil'' and ''assoilzie'').
+
+===Etymology 8===
+From {{inh|en|enm|a-}}, {{m|enm|o-|t=of}}. See [[a]] {{qualifier|preposition|of}}
+
+====Prefix====
+{{en-prefix}}
+
+# {{lb|en|no longer productive}} Of, from. {{defdate|First attested prior to 1150.}}&lt;ref name=SOED/&gt;
+#: '''''a'''new, '''a'''fresh, '''a'''thirst''&lt;ref name=Rand/&gt;
+
+=====Usage notes=====
+Different Germanic senses of ''a-'' became confused – vaguely “intensive” – and are no longer productive. The Greek sense of “not” (e.g., {{m|en|amoral}}, {{m|en|asymmetry}}) remains productive.
+: “[I]t naturally happened that all these ''a-'' prefixes were at length confusedly lumped together in idea, and the resultant ''a-'' looked upon as vaguely intensive, rhetorical, [[euphonic]] [nice-sounding], or even archaic, and wholly [[otiose]] [pointless].” OED.
+
+=====Derived terms=====
+{{prefixsee|en}}
+
+===References===
+&lt;references/&gt;
+* {{R:SOED5|page=1}}
+* {{R:OCD2|page=1}}
+* {{R:RHCD|page=1}}
+* {{R:Online Etymology Dictionary}}
+
+===Etymology 9===
+
+====Prefix====
+{{en-prefix}}
+
+# {{alt form|en|-a||empty syllable added to songs, poetry, verse and other speech}}
+
+===Etymology 10===
+
+====Prefix====
+{{en-prefix}}
+
+# {{lb|en|Chester}} {{non-gloss definition|1=Used as a prefix to verbs in the sense of remaining in the same condition.&lt;ref name=&quot;Holland&quot;/&gt;}}
+#: '''''a-'''''be, '''''a-'''''going
+#: {{uxi|en|Let that choilt a-be, wilt ta.|3=Let that child alone, will you.&lt;ref name=&quot;Holland&quot;/&gt;}}
+
+===References===
+&lt;references&gt;
+&lt;ref name=&quot;Holland&quot;&gt;Robert Holland, M.R.A.C., ''A Glossary of Words Used in the County of Chester,'' Part I--A to F., English Dialect Society, London, 1884, 1&lt;/ref&gt;
+&lt;/references&gt;
+
+===Etymology 11===
+
+====Prefix====
+{{en-prefix}}
+
+# {{lb|en|nonstandard}} {{n-g|A syllable added by a speaker supposed to be [[Italian]], or used to [[mimic]] or [[mock]] Italian accents; a pseudo-Italian syllable.}}
+#: {{ux|en|It's '''a-'''me, Mario.}}
+
+[[Category:English terms with alpha privatives]]
+[[Category:English unproductive prefixes]]
+
+----
+
+==A-Pucikwar==
+
+===Prefix===
+{{head|apq|prefix}}
+
+# {{non-gloss definition|prefix attached to words relating to the mouth, such as the names of languages}}
+
+----
+
+==Catalan==
+
+===Etymology 1===
+From {{der|ca|grc|ἀ-}}.
+
+====Prefix====
+{{head|ca|prefix}}
+
+# [[#English|a-]] {{gloss|not, without}}
+#: {{prefixusex|ca|moral|amoral|t1=moral|t2=amoral}}
+
+=====Derived terms=====
+{{prefixsee|ca}}
+
+===Etymology 2===
+From {{der|ca|la|ad|t=towards}}.
+
+====Prefix====
+{{head|ca|prefix}}
+
+# {{n-g|Used to make verbs from adjectives and nouns}}
+#: {{prefixusex|ca|feble|afeblir|t1=weak|t2=to weaken}}
+#: {{prefixusex|ca|sabor|assaborir|t1=taste|t2=to taste}}
+
+=====Derived terms=====
+{{prefixsee|ca}}
+
+===Further reading===
+* {{R:IEC2}}
+* {{R:GDLC}}
+* {{R:DNV}}
+
+----
+
+==Choctaw==
+
+===Prefix===
+{{head|cho|prefix|after another prefix|-sa-|f1alt=-s&lt;u&gt;a&lt;/u&gt;-|before vowels|am-|head=&lt;u&gt;a&lt;/u&gt;-|class III first-person singular}}
+
+# {{non-gloss definition|the [[indirect object]] of an active transitive verb}}
+#: to me, for me
+# {{non-gloss definition|the [[subject]] of an intransitive [[affective]] verb}}
+#: I
+# {{non-gloss definition|the [[direct object]] of a small set of transitive verbs mostly dealing with affect, communication and intimacy}}
+#: me
+# {{non-gloss definition|indicates possession of a noun}}
+#: my
+
+====Inflection====
+{{cho-person marker}}
+
+----
+
+==Danish==
+
+===Prefix===
+{{da-prefix}}
+
+# [[#English|a-]], [[un-]] ([[not]])
+# [[A-]] ([[atomic]], [[nuclear]])
+#: {{syn|da|atom-|A-}}
+
+====Derived terms====
+{{prefixsee|da}}
+
+----
+
+==Dutch==
+
+===Etymology===
+From {{der|nl|grc|ἀ-}} ({{m|grc|ἀν-}} immediately preceding a vowel).
+
+===Pronunciation===
+* {{IPA|nl|/aː/}}
+* {{audio|nl|Nl-a-.ogg|Audio}}
+
+===Prefix===
+{{head|nl|prefix}}
+
+# [[#English|a-]]: [[not|Not]], without, opposite of.
+
+====Derived terms====
+{{prefixsee|nl}}
+
+===See also===
+* {{l|nl|an-}}
+
+----
+
+==Esperanto==
+
+===Etymology===
+From {{der|eo|grc|ἀ-}}.
+
+===Prefix===
+{{head|eo|prefix}}
+
+# [[without]], [[-less]]
+
+====Derived terms====
+{{prefixsee|eo}}
+
+====Related terms====
+*{{l|eo|mal-}}, {{l|eo|ne-}}, {{l|eo|sen-}}
+
+----
+
+==Finnish==
+
+===Prefix===
+{{head|fi|prefix}}
+
+# {{q|in loanwords}} [[non-]], [[un-]]
+#: {{syn|fi|epä-}}
+
+----
+
+==French==
+
+===Pronunciation===
+* {{fr-IPA}}
+
+===Etymology 1===
+From {{inh|fr|fro|a-}}, from {{inh|fr|la|ad-}}.
+
+====Prefix====
+{{fr-prefix}}
+
+# {{non-gloss definition|A prefix forming words, especially verbs, that denote entering a state, making progress toward a goal, or the like.}}
+
+===Etymology 2===
+From {{der|fr|grc|ἀ-}} ({{m|grc|ἀν-}} immediately preceding a vowel; generalized from the many Latin borrowings using this prefix.
+
+====Prefix====
+{{fr-prefix}}
+
+# [[#English|a-]], [[non-]], [[-less]].
+
+===Derived terms===
+{{prefixsee|fr}}
+
+===Further reading===
+* {{R:TLFi}}
+
+[[Category:French terms spelled with -]]
+
+----
+
+==German==
+
+===Etymology===
+From {{der|de|grc|ἀ-}} ({{m|grc|ἀν-}} immediately preceding a vowel).
+
+===Pronunciation===
+* {{IPA|de|/a/}}
+* {{audio|de|De-a-.ogg|Audio}}
+
+===Prefix===
+{{head|de|prefix}}
+
+# [[#English|a-]] {{gloss|not, without, opposite of}}
+
+====Derived terms====
+{{prefixsee|de}}
+
+====Further reading====
+* {{R:Duden|a_}}
+* {{R:DWDS}}
+
+----
+
+==Indonesian==
+
+===Etymology===
+From {{der|id|sa|अ-|t=un-, not}}, from {{der|id|iir-pro|*a-}}, from {{der|id|ine-pro|*n̥-}}.
+* Reinforced as borrowing from {{bor|id|nl|a-}}, from {{der|id|grc|ἀ-}} (form {{m|grc|ἀν-}} immediately preceding a vowel), from {{der|id|grk-pro|*ə-}}, from the same {{der|id|ine-pro|*n̥-}}.
+
+===Pronunciation===
+* {{IPA|id|[a]}}
+* {{hyphenation|id|a}}
+
+===Prefix===
+{{head|id|prefix}}
+
+# [[#English|a-]] {{gloss|not, without, opposite of}}
+
+====Derived terms====
+{{prefixsee|id}}
+
+===Further reading===
+* {{R:KBBI Daring}}
+
+----
+
+==Italian==
+{{wikipedia|a (prefisso)|lang=it}}
+
+===Etymology 1===
+From {{inh|it|la|ad|ad-}}.
+
+====Prefix====
+{{head|it|prefix}}
+
+# [[ad-]] {{q|indicating direction}}
+
+=====Usage notes=====
+The Italian prefix ''a-'' often reduplicates the following consonant ([[:w:en:Syntactic gemination|syntactic gemination]], ''[[w:it:Raddoppiamento fonosintattico|raddoppiamento fonosintattico]]'').
+The actual forms usually will be {{m|it|ab-}} (in {{m|it|abbracciare}}), {{m|it|ac-}} (in {{m|it|accorrere}}), {{m|it|ad-}} (in {{m|it|addestrare}}), {{m|it|al-}} (in {{m|it|allargare}}) etc.
+
+===Etymology 2===
+Borrowed from {{bor|it|grc|ἀ-}}.
+
+====Prefix====
+{{head|it|prefix}}
+
+# [[#English|a-]] {{q|indicating lack or loss}}
+
+=====Alternative forms=====
+* {{alter|it|an-||before a vowel}}
+
+===Derived terms===
+{{prefixsee|it}}
+
+----
+
+==Latin==
+
+===Etymology 1===
+
+====Prefix====
+{{head|la|prefix|head=ā-}}
+
+# {{alternative form of|la|ab-}}
+
+=====Usage notes=====
+Used before bilabial voiced consonants: ''b-'', ''m-'' and ''v-''.
+
+===Etymology 2===
+From {{m|la|ad|t=towards}}
+
+====Prefix====
+{{head|la|prefix}}
+
+# {{lb|la|Before a word beginning with ''sc'', ''sp'' or ''st''}} {{alternative form of|la|ad-}}
+#: {{prefixusex|la|scando|gloss1=climb|alt1=scandere|ascendo|gloss2=climb up, go up; rise, spring up|alt2='''a'''scendere}}
+#: {{prefixusex|la|scribo|gloss1=write|alt1=scrībere|ascribo|gloss2=state in writing, add in writing; insert; appoint, enroll, enfranchise, reckon, number|alt2='''a'''scrībere}}
+#: {{prefixusex|la|spiro|gloss1=breathe|alt1=spīrāre|aspiro|gloss2=breathe or blow upon; am favorable to, assist, favor, aid; aspire or desire (to); approach, come near (to)|alt2='''a'''spīrāre}}
+#: {{prefixusex|la|specio|gloss1=observe, look at|alt1=specere|aspicio|gloss2=look at or towards, behold; regard, respect; observe, notice; examine, inspect; consider, ponder|alt2='''a'''spicere}}
+#: {{prefixusex|la|stringo|gloss1=press, tighten, compress|alt1=stringere|astringo|gloss2=draw close, bind or tie together; tighten, contract; check, restrain; oblige, necessitate|alt2='''a'''stringere}}
+#: {{prefixusex|la|struo|gloss1=compose, construct, build; ready, prepare; place, arrange|alt1=struere|astruo|gloss2=build near or to a thing, erect; build on, heap; build an additional structure|alt2='''a'''struere}}
+
+----
+
+==Latvian==
+
+===Etymology===
+Via other European languages, ultimately from {{der|lv|grc|ἀ-}} ({{m|grc|ἀν-}} immediately preceding a vowel).
+
+===Pronunciation===
+* {{lv-IPA|a}}
+{{audio|lv|lv-riga-a-.ogg}}
+
+===Prefix===
+{{lv-prefix}}
+
+# [[not|Not]], [[not]] [[have|having]], [[without]], [[opposite]] of.
+#: {{prefixusex|lv|seksuāls|aseksuāls}}
+
+----
+==Mohawk==
+
+===Alternative forms===
+* {{l|moh|aon-}} {{q|before {{l|moh|s-|t=iterative}} and {{l|moh|t-|t=cislocative}}}}
+
+===Prefix===
+{{head|moh|prefix}}
+
+# {{ngd|[[irrealis]] prefix}}
+
+===References===
+* {{R:moh:Deering:1976|page=332}}
+
+----
+
+==Murui Huitoto==
+
+===Pronunciation===
+* {{IPA|huu|[a-]}}
+
+===Prefix===
+{{head|huu|prefix}}
+
+# {{lb|huu|unproductive}} {{n-g|Used to form a few adverbs signifying a location or motion from or to above.}}
+
+====Derived terms====
+{{prefixsee|huu}}
+
+====Related terms====
+* {{l|huu|aa}}
+
+===References===
+* {{R:huu:Wojtylak:2017|page=145}}
+
+----
+
+==Navajo==
+
+===Prefix===
+{{head|nv|prefix}}
+
+# [[someone]]'s, [[people]]'s
+
+====Usage notes====
+This prefix is often used as a neutral possessive pronoun to make the citation forms of [[inalienable]] nouns: {{m|nv|amá|t=someone's mother}}, {{m|nv|akʼos|t=someone's neck}}, {{m|nv|ajáád|t=someone's leg}}, {{m|nv|ajááʼ|t=someone's ear}}, {{m|nv|akʼéí|t=someone's kin}}. The alternative is to use the prefix {{m|nv|ha-|t=one's}} or {{m|nv|bi-|t=his/her/its/their}} to make these dictionary forms.
+
+====See also====
+{{nv-possessive pronouns}}
+
+* {{l|nv|á-}}
+* {{l|nv|ał-}}
+* {{l|nv|ahił-}}
+
+[[Category:Navajo pronouns]]
+
+----
+
+==Portuguese==
+
+===Pronunciation===
+* {{IPA|pt|/ˌa/|qual1=Brazil}}
+* {{IPA|pt|/ɐ/|qual1=Portugal}}
+
+===Etymology 1===
+From {{inh|pt|roa-opt|a-}}.
+
+====Prefix====
+{{head|pt|prefix}}
+
+# {{non-gloss definition|added to [[adjective]] X, forms verbs meaning to make/t
+urn X}}
+#: '''a-''' + {{m|pt|vermelho|t=red}} + {{m|pt|-ar}} → {{m|pt|avermelhar|t=to re
+dden}}
+#: '''a-''' + {{m|pt|baixo|t=low}} + {{m|pt|-ar}} → {{m|pt|abaixar|t=to lower}}
+# {{non-gloss definition|added to [[noun]] X, forms verbs meaning to cause or ma
+ke X or to cause something to have X}}
+#: '''a-''' + {{m|pt|pavor|t=dread}} + {{m|pt|-ar}} → {{m|pt|apavorar|t=to frigh
+ten}}
+#: '''a-''' + {{m|pt|fama|t=fame}} + {{m|pt|-ar}} → {{m|pt|afamar|t=to make famo
+us}}
+
+===Etymology 2===
+From {{der|pt|grc|ἀ-}}, from {{der|pt|ine-pro|*n̥-}}.
+
+====Prefix====
+{{head|pt|prefix}}
+
+# [[#English|a-]] {{gloss|not; without}}
+#: {{syn|pt|in-}}
+
+===Derived terms===
+{{prefixsee|pt}}
+
+----
+
+</text>
+      <sha1>9h5oo1ap32ylsfu550ogp5shlijmia5</sha1>
+    </revision>
+  </page>
+
+ <page>
+    <title>LED</title>
+    <ns>0</ns>
+    <id>2062</id>
+    <revision>
+      <id>66150493</id>
+      <parentid>65974682</parentid>
+      <timestamp>2022-03-15T10:15:36Z</timestamp>
+      <contributor>
+        <username>Sarilho1</username>
+        <id>522155</id>
+      </contributor>
+      <comment>/* Portuguese */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="2414" xml:space="preserve">{{also|led|leð}}
+==English==
+{{wikipedia}}
+[[File:LEDs.jpg|thumb|right|LEDs in assorted colors.]]
+
+===Pronunciation===
+* {{IPA|en|/ɛl.iː.ˈdiː/|/lɛd/}}
+** {{audio|en|LL-Q1860 (eng)-Vealhurl-LED1.wav|Audio (UK)}}
+** {{audio|en|LL-Q1860 (eng)-Vealhurl-LED2.wav|Audio (UK)}}
+* {{rhymes|en|iː|ɛd|s1=3|s2=1}}
+
+===Noun===
+{{en-noun}}
+
+# {{initialism|en|light-emitting diode}}.
+
+====Derived terms====
+* {{l|en|OLED}}
+
+====Related terms====
+* {{l|en|CRT}}
+* {{l|en|LCD}}
+* {{l|en|TFT}}
+* {{l|en|VDU}}
+
+====Translations====
+{{trans-top|LED}}
+* Dutch: {{t+|nl|led|m}}
+* Esperanto: {{t|eo|LED}}
+* Estonian: {{t+|et|LED}}
+* Finnish: {{t+|fi|LED}}
+* French: {{t+|fr|DEL|f}}, {{t+|fr|LED|f}}
+* German: {{t+|de|LED|f}}
+* Hungarian: {{t+|hu|LED}}
+* Italian: {{t+|it|LED|m}}
+{{trans-mid}}
+* Japanese: {{t+|ja|LED}}
+* Macedonian: {{t|mk|ЛЕД}}
+* Persian: {{t|fa|ال‌ای‌دی|tr=el-i-di|sc=fa-Arab}}
+* Portuguese: {{t+|pt|LED|m}}
+* Romanian: {{t|ro|LED|n}}, {{t+|ro|led|n}}
+* Russian: {{t|ru|СД|m}}, {{t|ru|СИД|m}}
+* Spanish: {{t+|es|led|m}}
+{{trans-bottom}}
+
+===Anagrams===
+* {{anagrams|en|a=del|'eld|DLE|Del|Del.|EDL|LDE|del|del.|eld}}
+
+[[Category:en:Light sources]]
+
+----
+
+==German==
+
+===Pronunciation===
+* {{IPA|en|/ˌɛl ˌeː ˈdeː/}}
+* {{audio|de|De-LED.ogg|Audio}}
+
+===Noun===
+{{de-noun|f,s}}
+
+# [[#English|LED]] {{gloss|light-emitting diode}}
+#: {{syn|de|Leuchtdiode}}
+
+====Declension====
+{{de-ndecl|f,s}}
+
+===Further reading===
+* {{R:DWDS}}
+
+----
+
+==Norwegian Nynorsk==
+{{wikipedia|lang=nn|lysdiode}}
+[[File:RBG-LED.jpg|thumb|]]
+
+===Alternative forms===
+* {{alter|nn|led||alternative case spelling}}
+
+===Etymology===
+Borrowed from {{bor|nn|en|LED||light-emitting diode}}.
+
+===Noun===
+{{nn-noun-m1|LED-}}
+
+# {{l|en|LED}} {{gloss|light-emitting diode}}
+
+===References===
+* {{R:The Nynorsk Dictionary}}
+
+===Anagrams===
+* {{anagrams|nn|a=del|del|edl|eld|led}}
+
+----
+
+==Portuguese==
+
+===Alternative forms===
+* {{l|pt|led}}
+
+===Etymology===
+Borrowed from {{bor|pt|en|LED}}.
+
+===Pronunciation===
+{{pt-IPA|pt=léd(e)}}
+* {{a|Brazil}} {{IPA|pt|/ˈlɛd͡ʒ/}}
+
+===Noun===
+{{pt-noun|m|s}}
+
+# {{l|en|LED}} {{gloss|light-emitting diode}}
+#: {{syn|pt|díodo emissor de luz}}
+
+----
+
+==Swedish==
+
+===Etymology===
+Borrowed from {{bor|sv|en|LED}}.
+
+===Noun===
+{{sv-noun|c}}
+
+# {{l|en|LED}} {{gloss|light-emitting diode}}
+#:{{syn|sv|lysdiod}}
+
+===Anagrams===
+* {{anagrams|sv|a=del|del|eld}}
+
+[[Category:sv:Light sources]]</text>
+      <sha1>s1lqwnjxfl3o4smfj49puooutwa29bc</sha1>
+    </revision>
+  </page>
   <page>
     <title>piar</title>
     <ns>0</ns>
