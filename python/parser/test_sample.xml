@@ -1,0 +1,766 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.10/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.10/ http://www.mediawiki.org/xml/export-0.10.xsd" version="0.10" xml:lang="en">
+  <siteinfo>
+    <sitename>Wiktionary</sitename>
+    <dbname>enwiktionary</dbname>
+    <base>https://en.wiktionary.org/wiki/Wiktionary:Main_Page</base>
+    <generator>MediaWiki 1.39.0-wmf.5</generator>
+    <case>case-sensitive</case>
+    <namespaces>
+      <namespace key="-2" case="case-sensitive">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="case-sensitive" />
+      <namespace key="1" case="case-sensitive">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="case-sensitive">Wiktionary</namespace>
+      <namespace key="5" case="case-sensitive">Wiktionary talk</namespace>
+      <namespace key="6" case="case-sensitive">File</namespace>
+      <namespace key="7" case="case-sensitive">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="case-sensitive">Template</namespace>
+      <namespace key="11" case="case-sensitive">Template talk</namespace>
+      <namespace key="12" case="case-sensitive">Help</namespace>
+      <namespace key="13" case="case-sensitive">Help talk</namespace>
+      <namespace key="14" case="case-sensitive">Category</namespace>
+      <namespace key="15" case="case-sensitive">Category talk</namespace>
+      <namespace key="90" case="case-sensitive">Thread</namespace>
+      <namespace key="91" case="case-sensitive">Thread talk</namespace>
+      <namespace key="92" case="case-sensitive">Summary</namespace>
+      <namespace key="93" case="case-sensitive">Summary talk</namespace>
+      <namespace key="100" case="case-sensitive">Appendix</namespace>
+      <namespace key="101" case="case-sensitive">Appendix talk</namespace>
+      <namespace key="102" case="case-sensitive">Concordance</namespace>
+      <namespace key="103" case="case-sensitive">Concordance talk</namespace>
+      <namespace key="104" case="case-sensitive">Index</namespace>
+      <namespace key="105" case="case-sensitive">Index talk</namespace>
+      <namespace key="106" case="case-sensitive">Rhymes</namespace>
+      <namespace key="107" case="case-sensitive">Rhymes talk</namespace>
+      <namespace key="108" case="case-sensitive">Transwiki</namespace>
+      <namespace key="109" case="case-sensitive">Transwiki talk</namespace>
+      <namespace key="110" case="case-sensitive">Thesaurus</namespace>
+      <namespace key="111" case="case-sensitive">Thesaurus talk</namespace>
+      <namespace key="114" case="case-sensitive">Citations</namespace>
+      <namespace key="115" case="case-sensitive">Citations talk</namespace>
+      <namespace key="116" case="case-sensitive">Sign gloss</namespace>
+      <namespace key="117" case="case-sensitive">Sign gloss talk</namespace>
+      <namespace key="118" case="case-sensitive">Reconstruction</namespace>
+      <namespace key="119" case="case-sensitive">Reconstruction talk</namespace>
+      <namespace key="828" case="case-sensitive">Module</namespace>
+      <namespace key="829" case="case-sensitive">Module talk</namespace>
+      <namespace key="2300" case="case-sensitive">Gadget</namespace>
+      <namespace key="2301" case="case-sensitive">Gadget talk</namespace>
+      <namespace key="2302" case="case-sensitive">Gadget definition</namespace>
+      <namespace key="2303" case="case-sensitive">Gadget definition talk</namespace>
+    </namespaces>
+  </siteinfo>
+
+  <page>
+    <title>piar</title>
+    <ns>0</ns>
+    <id>588740</id>
+    <revision>
+      <id>65227867</id>
+      <parentid>62360651</parentid>
+      <timestamp>2022-01-07T05:05:07Z</timestamp>
+      <contributor>
+        <username>WingerBot</username>
+        <id>2024159</id>
+      </contributor>
+      <minor />
+      <comment>correct misordered language sections</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="3150" xml:space="preserve">==Abinomn==
+
+===Noun===
+{{head|bsa|noun}}
+
+# [[leech]]
+
+----
+
+==Galician==
+
+===Etymology 1===
+From {{inh|gl|roa-opt}}, of onomatopoetic origin, or possibly from {{inh|gl|la|pipilo|pipilō, pipilāre}}.
+
+====Pronunciation====
+* {{IPA|gl|/piˈaɾ/}}
+
+====Verb====
+{{gl-verb|pi|ar|pres=pío}}
+
+# to [[tweet]], to [[chirp]]
+# {{lb|gl|colloquial|figurative}} to [[covet]]; to [[ask]]; to [[speak]]
+
+=====Conjugation=====
+{{gl-conj-iar|p}}
+
+=====Derived terms=====
+* {{l|gl|tarde piaches}}
+
+=====Related terms=====
+* {{l|gl|pío}}
+
+===Etymology 2===
+13th century. From Old Galician and {{inh|gl|roa-opt|piar}} ({{w|Cantigas de Santa Maria}}), from {{inh|gl|VL.||*pilāre}}, from {{der|gl|la|pīla|t=pillar}}.
+[[File:Comunicación entre as insuas de Gres. Vila de Cruces.jpg|thumb|upright|''Piares'' or ''poldras'' across the river Ulla]]
+
+====Alternative forms====
+* {{l|gl|pear}}
+
+====Pronunciation====
+* {{IPA|gl|/piˈaɾ/}}
+
+====Noun====
+{{gl-noun|m}}
+
+# [[column]]; [[pillar]] {{gloss|large post}}
+#* '''1295''', Ramón Lorenzo (ed.), ''La traducción gallega de la Crónica General y de la Crónica de Castilla''. Ourense: I.E.O.P.F., page 53:
+#*: ''Et ffezo outrosi en esse castello de Gazõ, a seruiço de Deus, hũa jgleia de grande obra cõ '''piares''' et arcos de pedra marmor''
+#*:: And he also made there, in this castle of Gozón, for the service of God, a large church with '''columns''' and archs of marble stone
+#: {{syn|gl|columna}}
+# [[pillar]] {{gloss|essential part of something}}
+# [[window]] [[sill]]
+#: {{syn|gl|peitoril}}
+# one of several [[stone]] [[pillar]]s placed by way of a [[bridge]]
+#: {{syn|gl|poldra}}
+
+===Further reading===
+* {{R:DRAG}}
+
+===References===
+* {{R:DDGM}}
+* {{R:gl:CX}}
+* {{R:DDLG}}
+* {{R:TILG}}
+* {{R:TLPGP}}
+
+{{topics|gl|Animal sounds|Architecture}}
+----
+
+==Mòcheno==
+
+===Etymology===
+From {{inh|mhn|gmh|bier}}, from {{inh|mhn|goh|bior}}, from {{inh|mhn|gmw-pro|*beuʀ}}, from {{inh|mhn|gem-pro|*beuzą||beer}}. Cognate with {{cog|de|Bier}}, {{cog|en|beer}}.
+
+===Noun===
+{{mhn-noun|n}}
+
+# [[beer]]
+
+===References===
+* {{R:CLM}}
+
+{{c|mhn|Beverages}}
+
+----
+
+==Muellama==
+
+===Etymology===
+Compare {{cog|kwi|piá}}.
+
+===Noun===
+{{head|sai-mue|noun}}
+
+# [[maize]]
+
+===References===
+* Sergio Elías Ortiz, ''Lenguas y dialectos indigenas de Colombia''
+
+----
+
+==Portuguese==
+
+===Etymology===
+From {{inh|pt|roa-opt}}, from {{inh|pt|la|pipilāre}}, present active infinite of {{m|la|pipilō}}, or of onomatopoetic origin.
+
+===Verb===
+{{pt-verb|pi|ar}}
+
+# to {{l|en|chirp}} {{gloss|to make a short, sharp sound, as of small birds}}
+# {{lb|pt|by extension}} to {{l|en|chat}}
+#: {{syn|pt|falar}}
+
+====Conjugation====
+{{pt-conj|pi|ar}}
+
+====Related terms====
+* {{l|pt|pio}}
+* {{l|pt|piada}}
+
+----
+
+==Spanish==
+
+===Etymology===
+Of {{onomatopoeic|es|nocap=1}} origin from {{m|es|pío||cheep}}, the lowing sound made by a bird. Or possibly from {{inh|es|la|pipilāre}}, present active infinite of {{m|la|pipilō}}.
+
+===Pronunciation===
+{{es-IPA}}
+
+===Verb===
+{{es-verb|&lt;í&gt;}}
+
+# to [[chirp]]
+
+====Conjugation====
+{{es-conj|&lt;í&gt;}}
+
+====Related terms====
+* {{l|es|pío}}
+
+===Further reading===
+* {{R:DRAE}}
+
+{{C|es|Sound}}</text>
+      <sha1>dl2gx0txa4w8p78v6fzafzzjzqp9r9j</sha1>
+    </revision>
+  </page>
+ <page>
+  <title>remontado</title>
+    <ns>0</ns>
+    <id>6172</id>
+    <revision>
+      <id>64214415</id>
+      <parentid>62079630</parentid>
+      <timestamp>2021-10-14T10:51:13Z</timestamp>
+      <contributor>
+        <username>AutoDooz</username>
+        <id>3732454</id>
+      </contributor>
+      <minor />
+      <comment>Spanish: Add &quot;Further reading&quot; section with DRAE link (bot edit)</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="540" xml:space="preserve">==Portuguese==
+
+===Verb===
+{{pt-pp|remontad|remontar}}
+
+# {{pt-verb-form-of|remontar}}
+
+----
+
+==Spanish==
+
+===Pronunciation===
+{{es-IPA}}
+
+===Noun===
+{{es-noun|m}}
+
+# Re-[[mount]]ed, gone back to the hills or mountains (said of someone who has returned to the wild and left civilization.)
+# a Northern Philippine's tribesman
+
+====References====
+* http://www.kokogiak.com/logolepsy/ow_r.html
+
+===Verb===
+{{es-past participle|remontad}}
+
+# {{es-verb form of|mood=participle|gen=m|num=s|ending=ar|remontar}}
+
+===Further reading===
+* {{R:DRAE}}</text>
+      <sha1>novbuqb5hofhxra4hnpax8bw7rge9c9</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>remonta</title>
+    <ns>0</ns>
+    <id>6173</id>
+    <revision>
+      <id>63181120</id>
+      <parentid>62079628</parentid>
+      <timestamp>2021-07-16T23:31:47Z</timestamp>
+      <contributor>
+        <username>Ultimateria</username>
+        <id>123938</id>
+      </contributor>
+      <comment>/* Spanish */ +etyls, f r, split etyls</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="862" xml:space="preserve">{{also|remontá}}
+==French==
+
+===Verb===
+{{head|fr|verb form}}
+
+# {{inflection of|fr|remonter||3|s|phis}}
+
+===Anagrams===
+* {{anagrams|fr|montera}}
+
+----
+
+==Portuguese==
+
+===Verb===
+{{head|pt|verb form}}
+
+# {{pt-verb-form-of|remontar}}
+
+----
+
+==Spanish==
+
+===Pronunciation===
+{{es-IPA}}
+
+===Etymology 1===
+{{deverbal|es|remontar}}.
+
+====Noun====
+{{es-noun|f}}
+
+# a re-mount, a fresh horse to ride on
+# supply of saddle horses (from Southwestern U.S.)
+
+===Etymology 2===
+{{nonlemma}}
+
+====Verb====
+{{head|es|verb form}}
+
+# {{es-verb form of|ending=ar|mood=imperative|sense=affirmative|pers=2|formal=no|number=singular|remontar}}
+# {{es-verb form of|ending=ar|mood=indicative|tense=present|pers=2|formal=yes|number=singular|remontar}}
+# {{es-verb form of|ending=ar|mood=indicative|tense=present|pers=3|number=singular|remontar}}
+
+===Further reading===
+* {{R:DRAE}}</text>
+      <sha1>3sgyge7jy7yhjlk0hujdtv0pxqwen6o</sha1>
+    </revision>
+</page>
+<page>
+    <title>remontar</title>
+    <ns>0</ns>
+    <id>408510</id>
+    <revision>
+      <id>65036114</id>
+      <parentid>64928698</parentid>
+      <timestamp>2021-12-24T17:42:09Z</timestamp>
+      <contributor>
+        <username>General Vicinity</username>
+        <id>3886955</id>
+      </contributor>
+      <comment>/* Verb */ [[date back]]</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="641" xml:space="preserve">==Portuguese==
+
+===Etymology===
+{{prefix|pt|re|montar}}
+
+===Verb===
+{{pt-verb|remont|ar}}
+
+# to [[remount]]
+# to [[reassemble]]
+
+====Conjugation====
+{{pt-conj|remont|ar}}
+
+----
+
+==Spanish==
+
+===Etymology===
+{{af|es|re-|montar}}
+
+===Pronunciation===
+{{es-IPA}}
+
+===Verb===
+{{es-verb}}
+
+# to [[frighten]] away
+# to [[overcome]]
+# to [[elevate]]
+# to [[repair]]
+# to [[go up]] (a river)
+# {{lb|es|reflexive}} {{gloss|+ '''''a'''''}} to [[date back]] ([[to]]), to [[go back]] to, to be [[traced]] back {{gloss|to a point in the past}}
+
+====Conjugation====
+{{es-conj}}
+
+====Derived terms====
+* {{l|es|remonta}}
+
+===Further reading===
+* {{R:DRAE}}</text>
+      <sha1>i4ql46y9xwnz837yxzfwug612b9tsql</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>pies</title>
+    <ns>0</ns>
+    <id>57</id>
+    <revision>
+      <id>66227533</id>
+      <parentid>65990565</parentid>
+      <timestamp>2022-03-25T23:50:45Z</timestamp>
+      <contributor>
+        <username>AutoDooz</username>
+        <id>3732454</id>
+      </contributor>
+      <minor />
+      <comment>Polish: Replace () with {{gl}}, per [[Wiktionary:Grease_pit/2022/
+March#Polish_cleanup_wishlist]] (manually assisted)</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="3554" xml:space="preserve">{{also|piés|piês|píes}}
+==English==
+
+===Pronunciation===
+* {{IPA|en|/paɪz/}}
+** {{audio|en|LL-Q1860 (eng)-Vealhurl-pies.wav|Audio (UK)}}
+* {{rhymes|en|aɪz|s=1}}
+
+===Noun===
+{{head|en|noun form}}
+
+# {{plural of|en|pie}}
+
+===Verb===
+{{head|en|verb form}}
+
+# {{en-third-person singular of|pie}}
+# {{en-third-person singular of|pi}}
+
+===Anagrams===
+* {{anagrams|en|a=eips|EPIs|Epis|Peis|Seip|Sipe|epis|ipes|pisé|sipe|spie}}
+
+----
+
+==Asturian==
+
+===Noun===
+{{head|ast|noun form}}
+
+# {{plural of|ast|pie}}
+
+----
+
+==Cornish==
+
+===Etymology===
+Appears to ultimately derive from {{der|kw|ine-pro|*(s)peyk-||magpie}}. {{etystu
+b|kw}}
+
+===Noun===
+{{head|kw|noun|g=f|singulative|piesen}}
+
+# [[magpie]]s
+
+{{topics|kw|Corvids|Perching birds}}
+
+----
+
+==Dutch==
+
+===Etymology===
+Variant of {{m|nl|pis}}.
+
+===Pronunciation===
+* {{IPA|nl|/ˈpis/}}
+* {{audio|nl|Nl-pies.ogg|Audio}}
+* {{hyphenation|nl|pies}}
+* {{rhymes|nl|is|s=1}}
+
+===Noun===
+{{nl-noun|m|-|-}}
+
+# {{lb|nl|slang|or|childish}} {{alternative form of|nl|pis|nodot=yes}}; [[pee]],
+ [[piss]].
+
+====Derived terms====
+* {{l|nl|piesen}}
+
+===Anagrams===
+* {{l|nl|peis}}
+
+----
+
+==French==
+
+===Pronunciation===
+* {{audio|fr|LL-Q150 (fra)-WikiLucas00-pies.wav|Audio}}
+
+===Noun===
+{{head|fr|noun form|g=f}}
+
+# {{plural of|fr|pie}}
+
+===Anagrams===
+* {{l|fr|ipés}}, {{l|fr|Pise}}, {{l|fr|pisé}}
+
+----
+
+==Kashubian==
+[[Image:Pies nierasowy, 20201225 1128 5279.jpg|thumb|Pies.]]
+
+===Etymology===
+From {{inh|csb|sla-pro|*pьsъ}}. Cognates include {{cog|pl|pies}} and {{cog|cs|pes}}.
+
+===Pronunciation===
+* {{IPA|csb|/ˈpjɛs/}}
+* {{hyph|csb|pies}}
+
+===Noun===
+{{csb-noun|m-an|dim=piesk}}
+
+# [[dog]] ''([[Canis familiaris]])''
+
+====Synonyms====
+* {{l|csb|tósz}}
+
+===References===
+* {{R:csb:SPK|+}}
+
+{{C|csb|Canids}}
+
+----
+
+==Latin==
+
+===Verb===
+{{la-verb-form|piēs}}
+
+# {{inflection of|la|piō||2|s|pres|actv|subj}}
+
+===References===
+* {{R:du Cange}}
+
+----
+
+==Old Spanish==
+
+===Noun===
+{{head|osp|noun form|g=m-p}}
+
+# {{plural of|osp|pie}}
+
+----
+
+==Polish==
+[[Image:Bernese Dog 10m..jpg|thumb|right|pies]]
+{{wp|lang=pl}}
+
+===Etymology===
+{{inh+|pl|sla-pro|*pьsъ}}.
+
+===Pronunciation===
+{{pl-p|a=Pl-pies.ogg}}
+
+===Noun===
+{{pl-noun|m-an|dim=piesek|aug=psisko}}
+
+# A [[dog]] {{gl|''[[Canis lupus familiaris]]''}}.
+# A [[male]] dog.
+# {{lb|pl|hunting}} A male [[fox]] or [[badger]].
+
+====Declension====
+{{pl-decl-noun-masc-ani|p|s|pies|dats=psu}}
+
+====Derived terms====
+* {{q|nouns}} {{l|pl|psiak}}, {{l|pl|psiara}}, {{l|pl|psiarnia}}, {{l|pl|psiarz}}, {{l|pl|psica}}, {{l|pl|psię}}, {{l|pl|psina}}, {{l|pl|psota}}, {{l|pl|psowate}}
+*: {{q|diminutives}} {{l|pl|pieseczek}}, {{l|pl|piesek}}, {{l|pl|piesunio}}, {{l|pl|psiaczek}}, {{l|pl|psiątko}}, {{l|pl|psinka}}
+* {{q|adjectives}} {{l|pl|pieski}}, {{l|pl|psi}}, {{l|pl|psowaty}}
+* {{q|adverbs}} {{l|pl|psio}}, {{l|pl|piesko}}
+* {{q|verbs}} {{l|pl|psioczyć}}, {{l|pl|psuć}}
+
+===Noun===
+{{head|pl|noun|g=m-an|g2=m-pr}}
+
+# {{lb|pl|slang|derogatory}} [[cop]], [[policeman]]
+#: {{syn|pl|glina|gliniarz}}
+
+====Declension====
+{{pl-decl-noun-masc-ani|p|s|pies|dats=psu|accp=[[psy]]/[[psów]]}}
+
+===Further reading===
+* {{R:pl:WSJP}}
+* {{R:pl:PWN}}
+
+{{C|pl|Dogs|Foxes|Law enforcement|Male animals|Mustelids}}
+
+----
+
+==Portuguese==
+
+===Verb===
+{{head|pt|verb form}}
+
+# {{pt-verb-form-of|piar}}
+
+----
+
+==Spanish==
+
+===Pronunciation===
+{{es-IPA}}
+
+===Noun===
+{{head|es|noun form|g=m-p}}
+
+# {{noun form of|es|pie||p}}
+
+===Verb===
+{{head|es|verb form}}
+
+# {{es-verb form of|mood=subjunctive|tense=present|formal=n|person=2|number=s|voseo=y|region=Latin America|ending=ar|piar}}</text>
+      <sha1>jqmd4ix2hlwdbesol08v0edfu485563</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>abater</title>
+    <ns>0</ns>
+    <id>290</id>
+    <revision>
+      <id>66032799</id>
+      <parentid>65040667</parentid>
+      <timestamp>2022-03-01T00:41:04Z</timestamp>
+      <contributor>
+        <username>Gjprus</username>
+        <id>3909626</id>
+      </contributor>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="4213" xml:space="preserve">{{also|abàter}}
+==English==
+
+===Etymology===
+{{suffix|en|abate|er|id2=agent noun}}
+
+===Pronunciation===
+* {{a|GenAm}} {{IPA|en|/əˈbeɪ.tɚ/}}
+* {{audio|en|en-ca-abater.ogg|Audio (CA)}} 
+* {{rhymes|en|eɪtə(ɹ)|s=3}}
+
+===Noun===
+{{en-noun}}
+
+# One who, or that which, [[abate]]s. {{defdate|From 16&lt;sup&gt;th&lt;/sup&gt;
+ century.}}
+#* '''1583''', {{w|Robert Parry (poet)|Robert Parry}} (translator), ''The Second
+ Part of the Myrror of Knighthood'' by Pedro de la Sierra, London, Thomas Este, 
+Book 1, Part 2, Chapter 21,&lt;sup&gt;[http://name.umdl.umich.edu/A08548.0001.00
+1]&lt;/sup&gt;
+#*: This is the great Prince of Grecia, called the Knight of the Sunne, restorer
+ of the auncient kingdome of Tinacria, &amp; the '''abater''' and breaker of the
+ strength of the most strongest Giants in all the world.
+#* '''1732''', {{w|John Arbuthnot}}, ''Practical Rules of Diet in the Various Co
+nstitutions and Diseases of Human Bodies'', London: J. Tonson, Chapter{{nbsp}}1,
+ section{{nbsp}}26, p.{{nbsp}}281,&lt;sup&gt;[http://name.umdl.umich.edu/0048894
+06.0001.000]&lt;/sup&gt;
+#*: Anodyne, or '''Abaters''' of Pain of the Alimentary Kind. Such things as rel
+ax the Tension of the affected nervous Fibres {{...}}
+#* '''1908''', John H. Wallace, ''Preservation of the Game, Fish and Forests of 
+Alabama'', address given before the Alabama Press Association, 23 July, 1908, St
+ate Printers and Binders, p.{{nbsp}}6,&lt;sup&gt;[https://catalog.hathitrust.org
+/Record/100772675]&lt;/sup&gt;
+#*: As a fever germ '''abater''' in a malarial district, a flock of bull-bats is
+ worth a grove of quinine trees.
+#* '''1972''', David I. Cook and David F. Van Haverbeke, “Trees and shrubs can c
+urb noise, but with quite a few loud ‘ifs’,” in ''The Yearbook of Agriculture, 9
+72'', Washington, D.C.: US Department of Agriculture, p.{{nbsp}}28,&lt;sup&gt;[h
+ttps://catalog.hathitrust.org/Record/100772675]&lt;/sup&gt;
+#*: {{...}} research is proving the effectiveness of trees and shrubs as noise '
+''abaters'''—research prompted by the growing awareness that excessive noise is 
+a form of environmental pollution.
+
+====Translations====
+{{trans-top|one who, or that which, abates}}
+* Manx: {{t|gv|meeineyder|m}}
+{{trans-mid}}
+* Portuguese: {{t|pt|diminuidor|m}}
+{{trans-bottom}}
+
+===Anagrams===
+* {{anagrams|en|a=aabert|bat ear|rabate|trabea}}
+
+----
+
+==Galician==
+[[File:Pazo da Peregrina - Bertamirans - Ames - 03.jpg|thumb|A vine arbor in Gal
+icia]]
+===Etymology===
+From Old Galician and {{inh|gl|roa-opt|abater}} (13th century, ''{{w|Cantigas de
+ Santa Maria}}''), from {{inh|gl|VL.|*abbattō}}, from Latin {{prefix|la|ad|battu
+ō}}, from {{der|pt|cel-gau|-}}. Cognate with {{cog|pt|abater}}, {{cog|es|abatir}
+}, {{cog|fr|abattre}}.
+
+===Pronunciation===
+* {{IPA|gl|/aβaˈteɾ/}}
+
+===Verb===
+{{gl-verb|abat|er}}
+
+# {{lb|gl|transitive}} to [[bend]], [[lower]]
+#: {{syn|gl|abaixar|amoucar}}
+## to bring the [[grapevine]] and its [[tendril]]s to the beams and props prepared for growing it
+# {{lb|gl|transitive}} to [[overthrow]], to [[throw down]]
+# {{lb|gl|transitive}} to [[defeat]]
+# {{lb|gl|pronominal}} to [[bend]], [[lean]]
+# {{lb|gl|pronominal}} to [[become]] [[dispirited]]
+
+====Conjugation====
+{{gl-conj-er|abat}}
+
+====Derived terms====
+* {{l|gl|abatíbel}}
+
+====Related terms====
+* {{l|gl|bater}}
+
+===References===
+* {{R:DDGM}}
+* {{R:gl:CX|abat}}
+* {{R:DDLG}}
+* {{R:TILG}}
+* {{R:TLPGP}}
+
+----
+
+==Portuguese==
+
+===Etymology===
+From {{inh|pt|roa-opt|abater}}, from {{inh|pt|VL.|*abbattō}}, from Latin {{prefix|la|ad|battuō}}, from {{der|pt|cel-gau|-}}. Cognate with {{cog|gl|abater}}, {{cog|es|abatir}}, {{cog|ca|abatre}}, {{cog|fr|abattre}}, {{cog|it|abbattere}}, and {{cog|ro|abate}}.
+
+===Pronunciation===
+{{pt-IPA|abatêr}}
+* {{hyphenation|pt|a|ba|ter}}
+
+===Verb===
+{{pt-verb|abat|er}}
+
+# {{lb|pt|intransitive}} to [[collapse]]
+# {{lb|pt|intransitive}} to [[topple]]
+# {{lb|pt|transitive}} to [[slaughter]]
+# {{lb|pt|intransitive}} to [[abate]], [[weaken]]
+# {{lb|pt|transitive}} to [[reduce]]
+# {{pt-verb-form-of|abater}}
+
+====Conjugation====
+{{pt-conj|abat|er}}
+
+====Derived terms====
+* {{l|pt|abatedouro}}
+
+====Related terms====
+* {{l|pt|bater}}
+
+===Further reading===
+* {{R:Aulete}}
+* {{R:Dicionário informal}}
+* {{R:DAN}}
+* {{R:pt:Infopédia}}
+* {{R:Michaelis}}
+* {{R:Priberam}}</text>
+      <sha1>hawrjstrbl3pd0l5yb0uo5q0idd40a2</sha1>
+    </revision>
+  </page>
+</mediawiki>
