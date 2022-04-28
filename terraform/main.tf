@@ -110,20 +110,3 @@ resource "google_firestore_index" "subscriber_language" {
     order      = "ASCENDING"
   }
 }
-
-resource "google_firestore_index" "poll_chat_epoch" {
-  project    = var.project
-  collection = "Poll"
-  fields {
-    field_path = "language"
-    order      = "ASCENDING"
-  }
-  fields {
-    field_path = "chat_id"
-    order      = "ASCENDING"
-  }
-  fields {
-    field_path = "epoch"
-    order      = "ASCENDING"
-  }
-}

@@ -26,16 +26,3 @@ def get_and_increment_answer_count(poll_id: int) -> dict:
         u"answer_count": document_snapshot.get(u"answer_count") + 1,
     })
     return document_snapshot.to_dict()
-
-def has_answers(language: str, chat_id: int) -> bool:
-    collection = db.collection(Constants.POLL_COLLECTION)
-    query = collection\
-        .where(u'language', u'==', language)\
-        .where(u'chat_id', u'==', chat_id)\
-        .order_by(u'epoch')\
-        .limit_to_last(1)
-    results = query.get()
-    if len(results) == 0:
-        return True
-    document_snapshot = results[1]
-    return document_snapshot.get(u'answer_count') > 0

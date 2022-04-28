@@ -23,8 +23,6 @@ def get_updater(language: str, token: str) -> Updater:
     for subscription in subscriptions:
         chat_id = subscription['chat_id']
         if subscription['is_quiz']:
-            if not Firestore.Poll.has_answers(language, chat_id):
-                continue
             Telegram.quiz(updater, chat_id, subscription)
             continue
         content = Content.get(language, subscription)
