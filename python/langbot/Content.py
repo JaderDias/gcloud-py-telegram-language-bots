@@ -2,6 +2,7 @@ import Storage
 from Logger import logger
 import random
 import re
+import Firestore.Poll
 
 title_matcher = re.compile("^([^=]+)(=.*)$")
 main_definition_searcher = re.compile("===([^=]+)===[^#]*# ([^\n]*)", re.DOTALL)
@@ -62,25 +63,29 @@ def get(language: str, subscription: dict) -> str:
             line = file_obj.readline()
     return None
 
-def get_quiz(language: str, publication_count: int) -> list:
+def get_quiz(language: str, chat_id: int, publication_count: int) -> list:
     max_index = max(publication_count, 15000)
-    random_index = random.randint(0, max_index)
-    logger.info(f"random_index {random_index}")
+    term_index = random.randint(0, max_index)
+    if random.random() > .5:
+        min_correct_term_index = Firestore.Poll.get_min_correct_term_index(language, chat_id)
+        if min_correct_term_index >= 0:
+            term_index = min_correct_term_index
+    logger.info(f"term_index {term_index}")
     result = []
     grammatical_class = ""
     with open(f"/tmp/{language}", "r") as file_obj:
         line_count = 0
         line = file_obj.readline()
         while line:
-            if line_count >= random_index:
+            if line_count >= term_index:
                 (title, _, grammatical_class_i, main_definition) = _parse(line)
                 if main_definition:
                     if grammatical_class == "" \
                         and quiz_grammatical_classes.match(grammatical_class_i):
                         grammatical_class = grammatical_class_i
                     if grammatical_class == grammatical_class_i:
-                        result.append((title, grammatical_class, main_definition))
-                        random_index = line_count + random.randint(2, 10)
+                        result.append((title, grammatical_class, main_definition, line_count))
+                        term_index = line_count + random.randint(2, 10)
                         if len(result) == 3:
                             return result
             line_count += 1

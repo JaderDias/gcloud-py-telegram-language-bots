@@ -50,8 +50,8 @@ def word_command(update: Update, context: CallbackContext) -> None:
     content = Content.get(subscription.get(u'language'), subscription)
     update.message.reply_text(content)
 
-def _get_quiz(publication_count: int) -> tuple:
-    words = Content.get_quiz(language, publication_count)
+def _get_quiz(chat_id: int, publication_count: int) -> tuple:
+    words = Content.get_quiz(language, chat_id, publication_count)
     correct_option_id = random.randint(1, len(words)) - 1
     logger.info(f"words {words} correct_option_id {correct_option_id}")
     correct_answer = words[correct_option_id]
@@ -59,12 +59,12 @@ def _get_quiz(publication_count: int) -> tuple:
     options = []
     for word in words:
         options.append(word[0])
-    return (question, options, correct_option_id)
+    return (question, options, correct_option_id, correct_answer[3])
 
 def quiz(updater: Updater, chat_id: int, subscription: dict) -> None:
     if not subscription:
         subscription = Firestore.Subscriber.get_subscription(language, chat_id)
-    (question, options, correct_option_id) = _get_quiz(subscription["publication_count"])
+    (question, options, correct_option_id, term_index) = _get_quiz(subscription["chat_id"], subscription["publication_count"])
     message = updater.bot.send_poll(
         chat_id,
         question,
@@ -72,14 +72,22 @@ def quiz(updater: Updater, chat_id: int, subscription: dict) -> None:
         type=Poll.QUIZ,
         correct_option_id=correct_option_id,
     )
-    Firestore.Poll.create(language, chat_id, message.poll.id, options[correct_option_id])
+    Firestore.Poll.create(
+        language,
+        chat_id,
+        message.poll.id,
+        correct_option_id,
+        options[correct_option_id],
+        term_index
+    )
 
 def quiz_command(update: Update, context: CallbackContext) -> None:
     quiz(updater, update.effective_chat.id, None)
 
 def receive_quiz_answer(update: Update, context: CallbackContext) -> None:
-    poll = Firestore.Poll.get_and_increment_answer_count(update.poll.id)
-    if poll["answer_count"] == 0:
+    print(update)
+    poll = Firestore.Poll.get_and_increment_answer_count(update.poll.id, update.poll.options)
+    if poll["total_answers"] == 0:
         quiz(updater, poll["chat_id"], None)
 
 def subscribe(update: Update, context: CallbackContext, interval_s: int, is_quiz: bool) -> None:
