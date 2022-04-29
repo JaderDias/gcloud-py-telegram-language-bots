@@ -54,6 +54,10 @@ def _get_quiz(chat_id: int, publication_count: int) -> tuple:
     words = Content.get_quiz(language, chat_id, publication_count)
     correct_option_id = random.randint(1, len(words)) - 1
     logger.info(f"words {words} correct_option_id {correct_option_id}")
+    if correct_option_id > 0:
+        temp = words[0]
+        words[0] = words[correct_option_id]
+        words[correct_option_id] = temp
     correct_answer = words[correct_option_id]
     question = f"{correct_answer[2]} ({correct_answer[1]})"
     options = []

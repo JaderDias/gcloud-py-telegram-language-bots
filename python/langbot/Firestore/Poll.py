@@ -1,16 +1,20 @@
 import Constants
+from Logger import logger
 
 from google.cloud import firestore
 from datetime import datetime
+import sys
 
 db = firestore.Client()
 
-def create(language: str,\
-           chat_id: int,\
-           poll_id: int,\
-           correct_option_id: int,\
-           term: str,\
-           term_index: str) -> None:
+def create(
+        language: str,
+        chat_id: int,
+        poll_id: int,
+        correct_option_id: int,
+        term: str,
+        term_index: str,
+) -> None:
     document_reference = db.document(Constants.POLL_COLLECTION, poll_id)
     document_reference.set({
         u"language": language,
@@ -24,7 +28,10 @@ def create(language: str,\
         u"term_index": term_index,
     })
 
-def get_and_increment_answer_count(poll_id: int, options: list) -> dict:
+def get_and_increment_answer_count(
+        poll_id: int,
+        options: list,
+) -> dict:
     document_reference = db.document(Constants.POLL_COLLECTION, poll_id)
     document_snapshot = document_reference.get()
     obj = {
@@ -37,28 +44,51 @@ def get_and_increment_answer_count(poll_id: int, options: list) -> dict:
     document_reference.update(obj)
     return document_snapshot.to_dict()
 
-def get_min_correct_term_index(language: str, chat_id: int) -> dict:
+def get_min_correct_term_index(
+        language: str,
+        chat_id: int,
+) -> int:
     collection = db.collection(Constants.POLL_COLLECTION)
     docs = collection\
         .where(u'language', u'==', language)\
         .where(u'chat_id', u'==', chat_id)\
         .order_by(u'epoch')\
         .limit_to_last(100)
+    return _get_min_correct_term_index(docs.get())
+
+def _get_min_correct_term_index(
+    docs: list
+) -> int:
+    if len(docs) == 0:
+        return -1
+    last_index = docs[0].get(u'term_index')
+    last_correct_index = -1
     terms = {}
-    for document_snapshot in docs.get():
-        term = document_snapshot.get(u'term')
-        if term in terms.keys():
-            terms[term]["correct_answers"] += document_snapshot.get(u"correct_answers")
-            terms[term]["total_answers"] += document_snapshot.get(u"total_answers")
+    for document_snapshot in docs:
+        term_index = document_snapshot.get(u'term_index')
+        correct_answers = document_snapshot.get(u"correct_answers")
+        total_answers = document_snapshot.get(u"total_answers")
+        if last_correct_index == -1\
+                and total_answers > 0\
+                and correct_answers == total_answers:
+            last_correct_index = term_index
+        term = terms.get(term_index)
+        logger.debug(f'term_index {term_index} total {total_answers} correct {correct_answers}')
+        if term is None:
+            terms[term_index] = document_snapshot.to_dict()
+            terms[term_index]["total_quizes"] = 1
         else:
-            terms[term] = document_snapshot.to_dict()
-    min_correct_ratio = 2
+            term["total_quizes"] += 1
+    min_correct_ratio = sys.maxsize
     min_correct_term_index = -1
-    for value in terms.values():
-        ratio = value["correct_answers"] / value["total_answers"]
+    for term_index, value in terms.items():
+        if value["total_answers"] == 0:
+            continue
+        if term_index == last_index or term_index == last_correct_index:
+            continue
+        ratio = (value["total_quizes"] * value["correct_answers"]) / value["total_answers"]
         if ratio < min_correct_ratio:
             min_correct_ratio = ratio
-            min_correct_term_index = value["term_index"]
+            min_correct_term_index = term_index
+    logger.debug(f"last_index {last_index} last_correct_index {last_correct_index} min correct ratio: {min_correct_ratio}")
     return min_correct_term_index
-    
-    

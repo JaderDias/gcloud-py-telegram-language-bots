@@ -63,11 +63,18 @@ def get(language: str, subscription: dict) -> str:
             line = file_obj.readline()
     return None
 
-def get_quiz(language: str, chat_id: int, publication_count: int) -> list:
+def get_quiz(
+        language: str,
+        chat_id: int,
+        publication_count: int,
+) -> list:
     max_index = max(publication_count, 15000)
     term_index = random.randint(0, max_index)
     if random.random() > .5:
-        min_correct_term_index = Firestore.Poll.get_min_correct_term_index(language, chat_id)
+        min_correct_term_index = Firestore.Poll.get_min_correct_term_index(
+            language,
+            chat_id,
+        )
         if min_correct_term_index >= 0:
             term_index = min_correct_term_index
     logger.info(f"term_index {term_index}")
