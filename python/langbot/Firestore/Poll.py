@@ -19,7 +19,7 @@ def create(
     document_reference.set({
         u"language": language,
         u"chat_id": chat_id,
-        u"epoch": datetime.now().timestamp(),
+        u"create_epoch": datetime.now().timestamp(),
         u"poll_id": poll_id,
         u"correct_option_id": correct_option_id,
         u"total_answers": 0,
@@ -36,11 +36,13 @@ def get_and_increment_answer_count(
     document_snapshot = document_reference.get()
     obj = {
         "total_answers": 0,
+        "update_epoch": datetime.now().timestamp(),
     }
     for i in range(len(options)):
         obj["total_answers"] += options[i]["voter_count"]
         if i == document_snapshot.get(u"correct_option_id"):
             obj["correct_answers"] = options[i]["voter_count"]
+    logger.debug(obj)
     document_reference.update(obj)
     return document_snapshot.to_dict()
 
@@ -52,8 +54,8 @@ def get_min_correct_term_index(
     docs = collection\
         .where(u'language', u'==', language)\
         .where(u'chat_id', u'==', chat_id)\
-        .order_by(u'epoch')\
-        .limit_to_last(100)
+        .order_by(u'create_epoch', direction=firestore.Query.DESCENDING)\
+        .limit(100)
     return _get_min_correct_term_index(docs.get())
 
 def _get_min_correct_term_index(
@@ -73,7 +75,7 @@ def _get_min_correct_term_index(
                 and correct_answers == total_answers:
             last_correct_index = term_index
         term = terms.get(term_index)
-        logger.info(f'term_index {term_index} total {total_answers} correct {correct_answers}')
+        logger.debug(f'term_index {term_index}\ttotal {total_answers}\tcorrect {correct_answers}\tcreate epoch {document_snapshot.get(u"create_epoch")}')
         if term is None:
             terms[term_index] = document_snapshot.to_dict()
             terms[term_index]["total_quizes"] = 1
@@ -90,5 +92,5 @@ def _get_min_correct_term_index(
         if ratio < min_correct_ratio:
             min_correct_ratio = ratio
             min_correct_term_index = term_index
-    logger.info(f"last_index {last_index} last_correct_index {last_correct_index} min correct ratio: {min_correct_ratio}")
+    logger.debug(f"\nlast_index {last_index}\nlast_correct_index {last_correct_index}\nmin correct ratio: {min_correct_ratio}")
     return min_correct_term_index

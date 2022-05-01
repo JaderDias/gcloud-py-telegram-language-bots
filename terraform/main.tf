@@ -39,8 +39,8 @@ resource "google_firestore_index" "poll_language_chat_epoch" {
     order      = "ASCENDING"
   }
   fields {
-    field_path = "epoch"
-    order      = "ASCENDING"
+    field_path = "create_epoch"
+    order      = "DESCENDING"
   }
 }
 
