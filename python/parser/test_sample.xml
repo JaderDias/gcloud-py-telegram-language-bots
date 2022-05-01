@@ -1612,4 +1612,114 @@ From {{inh|pt|roa-opt|abater}}, from {{inh|pt|VL.|*abbattō}}, from Latin {{pref
       <sha1>hawrjstrbl3pd0l5yb0uo5q0idd40a2</sha1>
     </revision>
   </page>
+  <page>
+    <title>drug</title>
+    <ns>0</ns>
+    <id>3453</id>
+    <revision>
+      <id>65553467</id>
+      <parentid>65409768</parentid>
+      <timestamp>2022-01-28T23:23:33Z</timestamp>
+      <contributor>
+        <ip>5.81.100.227</ip>
+      </contributor>
+      <comment>/* Romanian */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="17775" xml:space="preserve">{{also|друг}}
+==Serbo-Croatian==
+
+===Etymology===
+From {{inh|sh|sla-pro|*drugъ}}, from {{inh|sh|ine-bsl-pro|*draugás}}, from {{der|sh|ine-pro|*dʰrewgʰ-}}.
+
+===Pronunciation===
+* {{IPA|sh|/drûːɡ/}}
+
+===Noun===
+{{sh-noun|g=m|head=drȗg}}
+
+# {{lb|sh|Bosnia|Serbia|Montenegro}} [[friend]]
+# {{lb|sh|dated}} [[comrade]] (commonly used in parts of Former [[Yugoslavia]] among coworkers or friends)
+
+====Declension====
+{{sh-decl-noun
+|drȗg|drȕgovi / drȗzi
+|druga|drugova / druga
+|drugu|drugovima / druzima
+|druga|drugove / druge
+|drȗže|drugovi / druzi
+|drugu|drugovima / druzima
+|drugom|drugovima / druzima
+}}
+
+====Synonyms====
+* {{l|sh|prijatelj}}
+* {{l|sh|drugar}}
+* {{l|sh|frend}} {{qualifier|slang|Croatia}}
+
+====Derived terms====
+{{top2}}
+* {{l|sh|drúga}}
+* {{l|sh|drùgār}}
+* {{l|sh|drugòvati}}
+* {{l|sh|drùškan}}
+* {{l|sh|drúštven}}
+* {{l|sh|drúštvo}}
+* {{l|sh|društvoslovlje}}
+* {{l|sh|drùžba}}
+{{mid2}}
+* {{l|sh|drȕžbenīk}}
+* {{l|sh|druželjùbiv}}
+* {{l|sh|druželjùbivo}}
+* {{l|sh|druželjùbivost}}
+* {{l|sh|drùžica}}
+* {{l|sh|drùžina}}
+* {{l|sh|drúžiti}}
+{{bottom}}
+
+====Related terms====
+* {{l|sh|drugàrica}}
+* {{l|sh|drúga}}
+* {{l|sh|drùžica}}
+
+----</text>
+      <sha1>hawrjstrbl3pd0l5yb0uo5q0idd40a2</sha1>
+    </revision>
+  </page>
+ <page>
+    <title>servus</title>
+    <ns>0</ns>
+    <id>6184</id>
+    <revision>
+      <id>65800957</id>
+      <parentid>65680193</parentid>
+      <timestamp>2022-02-11T01:39:48Z</timestamp>
+      <contributor>
+        <username>LinguisticMystic</username>
+        <id>3695558</id>
+      </contributor>
+      <comment>/* Further reading */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="5162" xml:space="preserve">==Serbo-Croatian==
+
+===Alternative forms===
+* {{l|sh|serbus}}
+
+===Etymology===
+From {{der|sh|de|servus}}, ultimately from {{der|sh|la|servus}}.
+
+===Interjection===
+{{sh-interjection|head=sèrvus}}
+
+# {{lb|sh|Croatia|dated}} [[hello]]
+# {{lb|sh|Croatia|dated}} [[good bye]]
+
+====Synonyms====
+* {{l|sh|bok}} {{lb|sh|Croatian}}, {{l|sh|ćao}}, {{l|sh|zdravo}}
+
+----</text>
+      <sha1>hawrjstrbl3pd0l5yb0uo5q0idd40a2</sha1>
+    </revision>
+  </page>  
 </mediawiki>

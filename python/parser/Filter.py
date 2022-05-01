@@ -8,15 +8,17 @@ import re
 remove_other_languages = re.compile("\n==[^=].*$", flags=re.DOTALL)
 section_splitter = re.compile("===([^\n=]*)===[^=]", flags=re.DOTALL)
 skip_sections = re.compile("Alternative forms|Anagrams|Conjugation|Etymology|Further reading|Letter|Prefix|Proper noun|Quotations|References|See also")
-undesired_pronunciation = re.compile("\* (?:|{{[a-z]*-[a-z]*}} ){{[a-z]*-IPA(?:|\|pos=[a-z]*)}}[^*]*", flags=re.DOTALL)
+undesired_pronunciation = re.compile(r"\* (?:|{{[a-z]*-[a-z]*}} ){{[a-z]*-IPA(?:|\|pos=[a-z]*)}}[^*]*", flags=re.DOTALL)
 verb_form = re.compile(r"{{head\|[^|}]*\|verb form}}")
 verb_conjugation = re.compile(r"{{[^}-]*-([^|}]*)\|")
 undesired_definitions = re.compile("{{[^|]*(?:alt form|alt sp| of|prefixsee|prefixusex|topics)[|][^}]*}}")
 missing_definitions = re.compile(r"{{rfdef\|")
+rare_words = re.compile(r"\n# {{lb\|[^}]*\|(?:archaic|dated|rare)[|}][^\n]*")
 undesired_tags = re.compile("<ref>[^<]*</ref>")
 undesired_brackets = re.compile(r"\[\[Category[^\]]*\]\]")
 undesired_dashes = re.compile("-+$")
 undesired_subsections = re.compile("====(?:Conjugation|Descendants|Quotations|Related terms|See also)====.*", flags=re.DOTALL)
+required_definition = re.compile("\n# ")
 
 def filter(language: str, allowed_characters: str, file_pointer: io.BufferedIOBase) -> None:
     title = ""
@@ -64,10 +66,13 @@ def filter(language: str, allowed_characters: str, file_pointer: io.BufferedIOBa
                                 continue
                         if undesired_definitions.search(definition):
                             continue
+                        definition = rare_words.sub("", definition)
                         definition = undesired_tags.sub("", definition)
                         definition = undesired_brackets.sub("", definition)
                         definition = undesired_dashes.sub("", definition)
                         definition = undesired_subsections.sub("", definition)
+                        if not required_definition.search(definition):
+                            continue
                         result.append(f"==={sections[i]}===\n{definition}")
                     if not result:
                         continue

@@ -73,7 +73,7 @@ def _get_min_correct_term_index(
                 and correct_answers == total_answers:
             last_correct_index = term_index
         term = terms.get(term_index)
-        logger.debug(f'term_index {term_index} total {total_answers} correct {correct_answers}')
+        logger.info(f'term_index {term_index} total {total_answers} correct {correct_answers}')
         if term is None:
             terms[term_index] = document_snapshot.to_dict()
             terms[term_index]["total_quizes"] = 1
@@ -90,5 +90,5 @@ def _get_min_correct_term_index(
         if ratio < min_correct_ratio:
             min_correct_ratio = ratio
             min_correct_term_index = term_index
-    logger.debug(f"last_index {last_index} last_correct_index {last_correct_index} min correct ratio: {min_correct_ratio}")
+    logger.info(f"last_index {last_index} last_correct_index {last_correct_index} min correct ratio: {min_correct_ratio}")
     return min_correct_term_index
