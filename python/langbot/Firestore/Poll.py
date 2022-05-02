@@ -20,6 +20,7 @@ def create(
         u"language": language,
         u"chat_id": chat_id,
         u"create_epoch": datetime.now().timestamp(),
+        u"update_epoch": datetime.now().timestamp(),
         u"poll_id": poll_id,
         u"correct_option_id": correct_option_id,
         u"total_answers": 0,

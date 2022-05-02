@@ -44,7 +44,7 @@ alternative spelling: opzichtje
 * (transitive with 'à') to give someone a taste of their own medicine, to retaliate, to pay back in someone's own coin, to pay back in kind
 * synonym: rendre la pareille""")
         self.assertEqual(grammatical_class, "Verb")
-        self.assertEqual(main_definition, "(transitive with 'à') to give someone a taste of their own medicine, to retaliate, to pay back in someone's own coin, to pay back in kind")
+        self.assertEqual(main_definition, "to give someone a taste of their own medicine, to retaliate, to pay back in someone's own coin, to pay back in kind")
 
 if __name__ == '__main__':
     unittest.main()

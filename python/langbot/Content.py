@@ -2,6 +2,7 @@ import Storage
 from Logger import logger
 import random
 import re
+import string
 import Firestore.Poll
 
 title_matcher = re.compile("^([^=]+)(=.*)$")
@@ -17,6 +18,7 @@ synonym = re.compile(r"\n#: {{syn\|[^}|]*\|([^}|]*)}}")
 alternative_spelling = re.compile(r"=\n\{\{[^|}]*\|[^|}]*\|[^|}]*\|([^|}]*)\}\}", re.DOTALL)
 preserve_curly_link = re.compile(r"{{(?:lb|gloss)[^}]*[|=]([^|}=]+)}}")
 transitive = re.compile(r"{{indtr\|[^}|]*\|([^}])}}")
+transitive_main_definition = re.compile(r"^\((?:ambi|in|)transitive[^)]*\) ")
 remove_curly_link = re.compile(r"{{[^}]*[|=]([^|}=]+)}}")
 remove_curly_link_2 = re.compile(r"{{([^|}=]+)}}\n")
 square_link_search_1 = re.compile(r"\[\[[^|]*\|([^|\]]*)\]\]")
@@ -46,6 +48,7 @@ def _parse(line: str) -> tuple:
     if main_definition:
         grammatical_class = main_definition.groups()[0]
         main_definition = main_definition.groups()[1]
+        main_definition = transitive_main_definition.sub("", main_definition)
     definition = hashtag_search.sub("*", definition)
     definition = h4_search.sub(r"### \1", definition)
     definition = h3_search.sub(r"## \1", definition)
