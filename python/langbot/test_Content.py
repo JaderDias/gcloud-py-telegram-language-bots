@@ -76,5 +76,15 @@ alternative spelling: opzichtje
         self.assertEqual(grammatical_class, "Noun")
         self.assertEqual(main_definition, "harmfulness")
 
+    def test_reflexive(self):
+        line = r"kloniti===Pronunciation===\n* {{IPA|sh|/klǒniti/}}\n* {{hyphenation|sh|klo|ni|ti}}\n\n===Verb===\n{{sh-verb|head=klòniti|a=impf}}\n\n# {{lb|sh|reflexive}} to [[shun]], [[avoid]]"
+        (title, definition, grammatical_class, main_definition) = Content._parse(line)
+        self.assertEqual(title, "kloniti")
+        self.assertEqual(definition, """## Verb
+impf
+
+* (reflexive) to shun, avoid""")
+        self.assertEqual(grammatical_class, "Verb")
+        self.assertEqual(main_definition, "to shun, avoid")
 if __name__ == '__main__':
     unittest.main()
