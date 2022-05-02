@@ -1,10 +1,13 @@
 module "langbot" {
+    available_memory_mb  = 256
     source               = "../function"
-    project              = var.project
     function_name        = "${var.language_code}_bot"
     function_entry_point = "app"
     language_code        = var.language_code
+    max_instances        = 1
+    project              = var.project
     pubsub_topic_name    = "${var.language_code}_bot_trigger"
+    runtime              = "python39"
     source_bucket_name   = var.bucket_name
     source_dir           = abspath("../python/langbot")
     timeout              = 540 # 9 minutes
@@ -28,7 +31,7 @@ module "language_token" {
 
 resource "google_cloud_scheduler_job" "langbot_job" {
     name        = "${var.language_code}_bot_job"
-    description = "triggers ${var.language_code}_bot every 5th minute"
+    description = "triggers ${var.language_code}_bot every 5 minutes"
     schedule    = "*/5 * * * *"
     pubsub_target {
         topic_name = "projects/${var.project}/topics/${var.language_code}_bot_trigger"

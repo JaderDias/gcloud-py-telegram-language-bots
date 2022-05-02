@@ -19,10 +19,10 @@ resource "google_storage_bucket_object" "zip" {
 
 # Create Cloud Function
 resource "google_cloudfunctions_function" "function" {
-  name    = var.function_name
-  runtime = "python39"
-
-  available_memory_mb   = 256
+  name                  = var.function_name
+  runtime               = var.runtime
+  available_memory_mb   = var.available_memory_mb
+  max_instances         = var.max_instances
   source_archive_bucket = var.source_bucket_name
   source_archive_object = google_storage_bucket_object.zip.name
   environment_variables = {

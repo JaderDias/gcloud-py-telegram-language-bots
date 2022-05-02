@@ -1,8 +1,11 @@
-variable "project" {}
+variable "available_memory_mb" {}
 variable "function_name" {}
 variable "function_entry_point" {}
 variable "language_code" {}
+variable "max_instances" {}
+variable "project" {}
 variable "pubsub_topic_name" {}
+variable "runtime" {}
 variable "source_bucket_name" {}
 variable "source_dir" {}
 variable "timeout" {}
