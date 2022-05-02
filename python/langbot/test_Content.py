@@ -46,5 +46,22 @@ alternative spelling: opzichtje
         self.assertEqual(grammatical_class, "Verb")
         self.assertEqual(main_definition, "to give someone a taste of their own medicine, to retaliate, to pay back in someone's own coin, to pay back in kind")
 
+    def test_relational(self):
+        line = r"životinjski===Pronunciation===\n* {{a|adjective}} {{IPA|sh|/ʒiʋǒtiːɲskiː/}}\n* {{a|adverb}} {{IPA|sh|/ʒiʋǒtiːɲski/}}\n* {{hyphenation|sh|ži|vo|tinj|ski}}\n\n===Adjective===\n{{sh-adj|head=živòtīnjskī}}\n\n# {{lb|sh|relational}} [[animal]]\n# {{lb|sh|figuratively}} [[animal]], [[beast]], like an animal\n\n====Declension====\n{{sh-adj-def|životinjsk|o}}\n\n===Adverb===\n{{sh-adverb|head=živòtīnjski}}\n\n# like an animal; [[beastly]], [[brutally]]"
+        (title, definition, grammatical_class, main_definition) = Content._parse(line)
+        self.assertEqual(title, "životinjski")
+        self.assertEqual(definition, """## Adjective
+živòtīnjskī
+
+* (relational) animal
+* (figuratively) animal, beast, like an animal
+
+## Adverb
+živòtīnjski
+
+* like an animal; beastly, brutally""")
+        self.assertEqual(grammatical_class, "Adjective")
+        self.assertEqual(main_definition, "animal")
+
 if __name__ == '__main__':
     unittest.main()
