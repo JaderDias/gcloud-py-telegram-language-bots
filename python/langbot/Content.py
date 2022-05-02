@@ -4,6 +4,9 @@ import random
 import re
 import string
 import Firestore.Poll
+import resource
+
+_dictionary = []
 
 title_matcher = re.compile("^([^=]+)(=.*)$")
 main_definition_searcher = re.compile("===([^=]+)===[^#]*# ([^\n]*)", re.DOTALL)
@@ -25,6 +28,13 @@ square_link_search_1 = re.compile(r"\[\[[^|]*\|([^|\]]*)\]\]")
 square_link_search_2 = re.compile(r"\[\[([^|\]]*)\]\]")
 h3_search = re.compile(r"===([^=]+)===")
 h4_search = re.compile(r"====([^=]+)====")
+
+def _load(language: str) -> None:
+    if len(_dictionary) > 0:
+        return
+    with open(f"/tmp/{language}", "r") as file_obj:
+        for line in file_obj:
+            _dictionary.append(line)
 
 def _parse(line: str) -> tuple:
     title_match = title_matcher.match(line).groups()
@@ -55,23 +65,19 @@ def _parse(line: str) -> tuple:
     return (title, definition, grammatical_class, main_definition)
 
 def get(language: str, subscription: dict) -> str:
-    with open(f"/tmp/{language}", "r") as file_obj:
-        line_count = 0
-        line = file_obj.readline()
-        while line:
-            if line_count == subscription["publication_count"]:
-                (title, definition, grammatical_class, main_definition) = _parse(line)
-                return f"{title} ({grammatical_class}) {main_definition}\n\n{definition}"
-            line_count += 1
-            line = file_obj.readline()
-    return None
+    _load(language)
+    term_index = subscription["publication_count"]
+    line = _dictionary[term_index]
+    (title, definition, grammatical_class, main_definition) = _parse(line)
+    return f"{title} ({grammatical_class}) {main_definition}\n\n{definition}"
 
 def get_quiz(
         language: str,
         chat_id: int,
         publication_count: int,
 ) -> list:
-    max_index = max(publication_count, 15000)
+    _load(language)
+    max_index = len(_dictionary) - 1000
     term_index = random.randint(0, max_index)
     if random.random() > .5:
         min_correct_term_index = Firestore.Poll.get_min_correct_term_index(
@@ -83,21 +89,18 @@ def get_quiz(
     logger.info(f"term_index {term_index}")
     result = []
     grammatical_class = ""
-    with open(f"/tmp/{language}", "r") as file_obj:
-        line_count = 0
-        line = file_obj.readline()
-        while line:
-            if line_count >= term_index:
-                (title, _, grammatical_class_i, main_definition) = _parse(line)
-                if main_definition:
-                    if grammatical_class == "" \
-                        and quiz_grammatical_classes.match(grammatical_class_i):
-                        grammatical_class = grammatical_class_i
-                    if grammatical_class == grammatical_class_i:
-                        result.append((title, grammatical_class, main_definition, line_count))
-                        term_index = line_count + random.randint(2, 10)
-                        if len(result) == 3:
-                            return result
-            line_count += 1
-            line = file_obj.readline()
+    while term_index < len(_dictionary):
+        line = _dictionary[term_index]
+        (title, _, grammatical_class_i, main_definition) = _parse(line)
+        if main_definition:
+            if grammatical_class == "" \
+                and quiz_grammatical_classes.match(grammatical_class_i):
+                grammatical_class = grammatical_class_i
+            if grammatical_class == grammatical_class_i:
+                result.append((title, grammatical_class, main_definition, term_index))
+                term_index += random.randint(2, 10)
+                if len(result) == 3:
+                    logger.debug(f"memory usage {resource.getrusage(resource.RUSAGE_SELF).ru_maxrss} bytes")
+                    return result
+        term_index += 1
     return None
