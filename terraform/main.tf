@@ -44,62 +44,6 @@ resource "google_firestore_index" "poll_language_chat_epoch" {
   }
 }
 
-module "de_language" {
-    source        = "./modules/language"
-    bucket_name   = google_storage_bucket.bucket.name
-    language_code = "de"
-    project       = var.project
-    secret_value  = var.de_token
-    depends_on = [
-        google_app_engine_application.app,
-        google_storage_bucket.bucket,
-        google_firestore_index.subscriber_language,
-        google_firestore_index.poll_language_chat_epoch,
-    ]
-}
-
-module "es_language" {
-    source        = "./modules/language"
-    bucket_name   = google_storage_bucket.bucket.name
-    language_code = "es"
-    project       = var.project
-    secret_value  = var.es_token
-    depends_on = [
-        google_app_engine_application.app,
-        google_storage_bucket.bucket,
-        google_firestore_index.subscriber_language,
-        google_firestore_index.poll_language_chat_epoch,
-    ]
-}
-
-module "fr_language" {
-    source        = "./modules/language"
-    bucket_name   = google_storage_bucket.bucket.name
-    language_code = "fr"
-    project       = var.project
-    secret_value  = var.fr_token
-    depends_on = [
-        google_app_engine_application.app,
-        google_storage_bucket.bucket,
-        google_firestore_index.subscriber_language,
-        google_firestore_index.poll_language_chat_epoch,
-    ]
-}
-
-module "it_language" {
-    source        = "./modules/language"
-    bucket_name   = google_storage_bucket.bucket.name
-    language_code = "it"
-    project       = var.project
-    secret_value  = var.it_token
-    depends_on = [
-        google_app_engine_application.app,
-        google_storage_bucket.bucket,
-        google_firestore_index.subscriber_language,
-        google_firestore_index.poll_language_chat_epoch,
-    ]
-}
-
 module "nl_language" {
     source        = "./modules/language"
     bucket_name   = google_storage_bucket.bucket.name
