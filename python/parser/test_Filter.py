@@ -33,5 +33,19 @@ abater===Pronunciation===\n{{pt-IPA|abatêr}}\n* {{hyphenation|pt|a|ba|ter}}\n\n
 """
         self.assertEqual(actual, expected)
 
+    def test_de_sicher(self):
+        self.maxDiff = None
+        actual = ""
+        with open("test_sample.xml", "rb") as file_pointer,\
+                io.StringIO() as buf,\
+                redirect_stdout(buf):
+            Filter.filter("German", "A-ZÀäüöß", file_pointer)
+            actual = buf.getvalue()
+        print(actual)
+        expected = r"""LED===Pronunciation===\n* {{IPA|en|/ˌɛl ˌeː ˈdeː/}}\n* {{audio|de|De-LED.ogg|Audio}}\n\n===Noun===\n{{de-noun|f,s}}\n\n# [[#English|LED]] {{gloss|light-emitting diode}}\n#: {{syn|de|Leuchtdiode}}\n\n====Declension====\n{{de-ndecl|f,s}}
+sicher===Pronunciation===\n* {{IPA|de|/ˈzɪçər/}}\n** {{IPA|de|[ˈzɪçɐ]}} {{q|standard}}\n*** {{audio|de|De-sicher.ogg|audio (Germany)}}\n** {{IPA|de|[ˈziça]|[ˈzija]}} {{q|Ruhrgebiet}}\n** {{IPA|de|[ˈzɪɕɐ]|[ˈzɪʃɐ]|[ˈze-]}} {{q|central Germany}}\n** {{IPA|de|[ˈsiçɐ]}} {{q|Austro-Bavarian}}\n*** {{audio|de|De-at-sicher.ogg|audio (Austria)}}\n** {{IPA|de|[ˈsiχər]}} {{q|Alemannic}}\n\n===Adjective===\n{{de-adj|er|sichersten}}\n\n# [[safe]], [[secure]] {{gloss|not dangerous or in danger}}\n# [[sure]], [[certain]] {{gloss|convinced}}\n#: {{ux|de|Ich bin (mir) '''sicher''', dass es heute regnen wird.|I am '''sure''' that it will rain today.}}\n\n====Usage notes====\n* In the sense of “sure”, the word is often construed with a reflexive dative. There is little change in meaning, though this dative may slightly stress the personal conviction. The dative is particularly frequent when the following subclause is omitted: {{m|de||Er ist sich sicher.|t=He’s sure}}.\n\n====Declension====\n{{de-decl-adj|sicher|sicherer|sicherst}}\n\n====Derived terms====\n* {{l|de|auf Nummer sicher gehen}}\n* {{l|de|selbstsicher}}\n* {{l|de|sichergehen}}\n* {{l|de|Sicherheit}}\n* {{l|de|sicherstellen}}\n* {{l|de|siegessicher}}\n* {{l|de|unsicher}}\n\n===Adverb===\n{{de-adv}}\n\n# [[safely]]\n# [[surely]], [[certainly]]
+"""
+        self.assertEqual(actual, expected)
+
 if __name__ == '__main__':
     unittest.main()

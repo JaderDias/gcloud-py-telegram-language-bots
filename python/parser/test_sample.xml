@@ -1721,5 +1721,157 @@ From {{der|sh|de|servus}}, ultimately from {{der|sh|la|servus}}.
 ----</text>
       <sha1>hawrjstrbl3pd0l5yb0uo5q0idd40a2</sha1>
     </revision>
-  </page>  
+  </page>
+   <page>
+    <title>sicher</title>
+    <ns>0</ns>
+    <id>9137</id>
+    <revision>
+      <id>65616850</id>
+      <parentid>65101064</parentid>
+      <timestamp>2022-02-02T17:10:49Z</timestamp>
+      <contributor>
+        <username>Whitekiko</username>
+        <id>3765395</id>
+      </contributor>
+      <comment>/* Derived terms */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="2170" xml:space="preserve">==German==
+
+===Etymology===
+From {{inh|de|gmh|siher}}, from {{inh|de|goh|sihur}}, from {{inh|de|gmw-pro|*sikur}}, from {{der|de|la|sēcūrus||without care, secure}}. Cognate with English {{l|en|secure}}.
+
+===Pronunciation===
+* {{IPA|de|/ˈzɪçər/}}
+** {{IPA|de|[ˈzɪçɐ]}} {{q|standard}}
+*** {{audio|de|De-sicher.ogg|audio (Germany)}}
+** {{IPA|de|[ˈziça]|[ˈzija]}} {{q|Ruhrgebiet}}
+** {{IPA|de|[ˈzɪɕɐ]|[ˈzɪʃɐ]|[ˈze-]}} {{q|central Germany}}
+** {{IPA|de|[ˈsiçɐ]}} {{q|Austro-Bavarian}}
+*** {{audio|de|De-at-sicher.ogg|audio (Austria)}}
+** {{IPA|de|[ˈsiχər]}} {{q|Alemannic}}
+
+===Adjective===
+{{de-adj|er|sichersten}}
+
+# [[safe]], [[secure]] {{gloss|not dangerous or in danger}}
+# [[sure]], [[certain]] {{gloss|convinced}}
+#: {{ux|de|Ich bin (mir) '''sicher''', dass es heute regnen wird.|I am '''sure''' that it will rain today.}}
+
+====Usage notes====
+* In the sense of “sure”, the word is often construed with a reflexive dative. There is little change in meaning, though this dative may slightly stress the personal conviction. The dative is particularly frequent when the following subclause is omitted: {{m|de||Er ist sich sicher.|t=He’s sure}}.
+
+====Declension====
+{{de-decl-adj|sicher|sicherer|sicherst}}
+
+====Derived terms====
+* {{l|de|auf Nummer sicher gehen}}
+* {{l|de|selbstsicher}}
+* {{l|de|sichergehen}}
+* {{l|de|Sicherheit}}
+* {{l|de|sicherstellen}}
+* {{l|de|siegessicher}}
+* {{l|de|unsicher}}
+
+====Descendants====
+* {{desc|stq|sicher|bor=1}}
+
+===Adverb===
+{{de-adv}}
+
+# [[safely]]
+# [[surely]], [[certainly]]
+
+===Verb===
+{{head|de|verb form}}
+
+# {{verb form of|de|sichern||1|s|pres|;|s|imp}}
+
+===Further reading===
+* {{R:DWDS}}
+* {{R:UniLeipzig}}
+
+----
+
+==Hunsrik==
+
+===Pronunciation===
+* {{IPA|hrx|/ˈsiçɐ/}}
+
+===Adjective===
+{{head|hrx|adjective}}
+
+# [[safe]]
+# [[secure]]
+# [[certain]]
+
+====Antonyms====
+
+====Derived terms====
+* {{l|hrx|Sicherheet}}, {{l|hrx|Sicherheit}}
+
+===Adverb===
+{{head|hrx|adverb}}
+
+# [[surely]], [[certainly]]
+
+====Derived terms====
+* {{l|hrx|sicherlich}}
+
+===Further reading===
+* [https://hunsriqueanoriograndense.wordpress.com/dicionario-werterbuch/ Online Hunsrik Dictionary]</text>
+      <sha1>7hcyny5mjnm2jllxb4x3xy4w20vsfgi</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Jyutping</title>
+    <ns>0</ns>
+    <id>9142</id>
+    <revision>
+      <id>55309930</id>
+      <parentid>46977451</parentid>
+      <timestamp>2019-10-14T09:07:58Z</timestamp>
+      <contributor>
+        <username>WingerBot</username>
+        <id>2024159</id>
+      </contributor>
+      <minor />
+      <comment>move lang= to 1= in {{IPA}}</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1293" xml:space="preserve">{{also|jyutping}}
+==English==
+{{wikipedia}}
+
+===Etymology===
+From the Jyutping romanization of {{etyl|yue|en}} {{zh-l|粵拼|tr=jyut6 ping3}}.
+
+===Pronunciation===
+* {{IPA|en|/jut pʰɪŋ/}}
+
+===Proper noun===
+{{en-proper noun}}
+
+# A [[romanisation]] system for [[Cantonese]] developed by the Linguistic Society of Hong Kong (LSHK).
+
+====Translations====
+{{trans-top|romanisation system}}
+* Arabic: {{t|ar|يُتْبِنْغ|m}}
+* Chinese:
+*: Cantonese: {{t|yue|粵語拼音}}, {{t|yue|粤语拼音|tr=jyut6 jyu5 ping3 jam1}}, {{t|yue|粵拼}}, {{t|yue|粤拼|tr=jyut6 ping3}}, {{t|yue|香港語言學學會粵
+語拼音方案}}, {{t|yue|香港语言学学会粤语拼音方案|tr=hoeng1 gong2 jyu5 jin4 hok6 hok6 wui6 jyut6 jyu5 ping3 jam1 fong1 on3}}
+*: Mandarin: {{t+|cmn|粵語拼音}}, {{t+|cmn|粤语拼音|tr=yuèyǔ pīnyīn}}, {{t+|cmn|粵拼}}, {{t+|cmn|粤拼|tr=yuèpīn}}, {{t|cmn|香港語言學學會粵語拼音方案}}, {{t|cmn|香港語言學學會粵語拼音方案|tr=xiānggǎng yǔyánxué xuéhuì yuèyǔ pīnyīn fāng'àn}}
+* Hungarian: {{t|hu|jűtphing}}
+{{trans-mid}}
+* Japanese: {{t|ja|粤ピン|tr=etsu-pin}}
+* Korean: {{t|ko|월병}}
+* Russian: {{t|ru|ютпхи́н|m}}
+* Vietnamese: {{t|vi|Việt bính}}
+{{trans-bottom}}
+
+[[Category:English autological terms]]</text>
+      <sha1>46litnsmt3laqr65f5ket9f2gqz5kgi</sha1>
+    </revision>
+  </page>
 </mediawiki>
