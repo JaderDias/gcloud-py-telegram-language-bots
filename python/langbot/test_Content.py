@@ -63,5 +63,18 @@ alternative spelling: opzichtje
         self.assertEqual(grammatical_class, "Adjective")
         self.assertEqual(main_definition, "animal")
 
+    def test_uncountable(self):
+        line = r"štetnost===Pronunciation===\n* {{IPA|sh|/ʃtêtnoːst/}}\n* {{hyphenation|sh|štet|nost}}\n\n===Noun===\n{{sh-noun|g=f|head=štȅtnōst}}\n\n# {{lb|sh|uncountable}} [[harmfulness]]\n\n====Declension====\n{{sh-decl-noun-unc\n|štetnost\n|štetnosti\n|štetnosti\n|štetnost\n|štetnosti\n|štetnosti\n|štetnosti/štetnošću\n}}"
+        (title, definition, grammatical_class, main_definition) = Content._parse(line)
+        self.assertEqual(title, "štetnost")
+        self.assertEqual(definition, """## Noun
+štȅtnōst
+
+* (uncountable) harmfulness
+
+""")
+        self.assertEqual(grammatical_class, "Noun")
+        self.assertEqual(main_definition, "harmfulness")
+
 if __name__ == '__main__':
     unittest.main()
