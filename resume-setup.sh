@@ -21,6 +21,7 @@ if [ ! -f "$NL_DICT" ] || [ ! -f "$PT_DICT" ] || [ ! -f "$SH_DICT" ]; then
     DUMP_XML_BZ2="enwiktionary-latest-pages-articles-multistream.xml.bz2"
     if [ ! -f "../$DUMP_XML_BZ2" ]; then
         wget "https://dumps.wikimedia.org/enwiktionary/latest/$DUMP_XML_BZ2"
+        mv $DUMP_XML_BZ2 ../
     fi
     if [ ! -f "$NL_DICT" ]; then
         python3 python/parser/filter_wiktionary.py Dutch A-ZÁÉÍÓÚÀÈËÏÖÜĲ ../$DUMP_XML_BZ2 | tee $NL_DICT
